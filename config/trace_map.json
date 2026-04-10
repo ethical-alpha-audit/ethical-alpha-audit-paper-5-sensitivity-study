@@ -1,0 +1,142 @@
+{
+  "outputs/raw/scenario_results.csv": {
+    "phase": "Phase 2: Baseline Simulation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/02_results_and_tables.ipynb",
+    "rtm_targets": ["D1", "T1", "N8", "N9", "N10", "N11"],
+    "role": "100 scenario evaluations across 5 scenarios × 4 profiles × 5 replicates"
+  },
+  "outputs/raw/compensatory_comparison.csv": {
+    "phase": "Phase 3: Compensatory Comparison",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/02_results_and_tables.ipynb",
+    "rtm_targets": ["D2", "N1", "N2", "N3", "N4", "N5", "N6", "N7", "N28", "N29"],
+    "role": "NC vs compensatory scoring under moderate profile"
+  },
+  "outputs/processed/grid_results.json": {
+    "phase": "Phase 4: Grid Search",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/03_figures.ipynb",
+    "rtm_targets": ["D3", "F2"],
+    "role": "6×6 grid over safety and evidence gate thresholds"
+  },
+  "outputs/processed/pareto_solutions.csv": {
+    "phase": "Phase 5: NSGA-II Optimisation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/02_results_and_tables.ipynb",
+    "rtm_targets": ["D4", "F1", "T3", "N12", "N13", "N14", "N15", "N16", "N17"],
+    "role": "60 Pareto-optimal threshold configurations"
+  },
+  "outputs/processed/simulation_summary.json": {
+    "phase": "Phase 13: Summary",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/02_results_and_tables.ipynb",
+    "rtm_targets": ["D5", "D11", "N22", "N23", "N24"],
+    "role": "Lifecycle metrics, compensatory comparison, table data"
+  },
+  "outputs/tables/sobol_unsafe_detection_rate.csv": {
+    "phase": "Phase 7: Sobol Sensitivity",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/04_sensitivity_and_inference.ipynb",
+    "rtm_targets": ["D6", "T4", "N18"],
+    "role": "Sobol total-order indices for detection rate"
+  },
+  "outputs/tables/sobol_safe_throughput.csv": {
+    "phase": "Phase 7: Sobol Sensitivity",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/04_sensitivity_and_inference.ipynb",
+    "rtm_targets": ["D6", "T4", "N20"],
+    "role": "Sobol total-order indices for throughput"
+  },
+  "outputs/tables/sobol_false_negative_harm.csv": {
+    "phase": "Phase 7: Sobol Sensitivity",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/04_sensitivity_and_inference.ipynb",
+    "rtm_targets": ["D6", "T4", "N19"],
+    "role": "Sobol total-order indices for FN harm"
+  },
+  "outputs/tables/sobol_mean_total_friction.csv": {
+    "phase": "Phase 7: Sobol Sensitivity",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/04_sensitivity_and_inference.ipynb",
+    "rtm_targets": ["D6", "T4", "N21"],
+    "role": "Sobol total-order indices for friction"
+  },
+  "outputs/processed/dca_results.json": {
+    "phase": "Phase 8: Decision Curve Analysis",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/04_sensitivity_and_inference.ipynb",
+    "rtm_targets": ["D7", "F5"],
+    "role": "Net benefit across harm-benefit preference thresholds"
+  },
+  "outputs/processed/inference_results.json": {
+    "phase": "Phase 9: Statistical Inference",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/04_sensitivity_and_inference.ipynb",
+    "rtm_targets": ["D8", "N25", "N26", "N27"],
+    "role": "Bootstrap CIs and Bayesian intervals"
+  },
+  "outputs/tables/table1_thresholds.csv": {
+    "phase": "Phase 12: Table Generation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/02_results_and_tables.ipynb",
+    "rtm_targets": ["T1"],
+    "role": "Manuscript Table 1"
+  },
+  "outputs/tables/table2_pareto.csv": {
+    "phase": "Phase 12: Table Generation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/02_results_and_tables.ipynb",
+    "rtm_targets": ["T3"],
+    "role": "Manuscript Table 3 (Pareto summary)"
+  },
+  "outputs/tables/table2_per100_deployments.csv": {
+    "phase": "Derived in Notebook 02",
+    "script": "notebooks/02_results_and_tables.ipynb",
+    "notebook": "notebooks/02_results_and_tables.ipynb",
+    "rtm_targets": ["T2", "N6", "N7", "N39"],
+    "role": "Manuscript Table 2 (per-100 deployments)"
+  },
+  "outputs/figures/fig1_frontier.png": {
+    "phase": "Phase 11: Figure Generation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/03_figures.ipynb",
+    "rtm_targets": ["F1"],
+    "role": "Figure 1: Pareto frontier and sweet-spot"
+  },
+  "outputs/figures/fig2_heatmap.png": {
+    "phase": "Phase 11: Figure Generation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/03_figures.ipynb",
+    "rtm_targets": ["F2"],
+    "role": "Figure 2: Grid search heatmap"
+  },
+  "outputs/figures/fig3_sensitivity.png": {
+    "phase": "Phase 11: Figure Generation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/03_figures.ipynb",
+    "rtm_targets": ["F3"],
+    "role": "Figure 3: Sobol sensitivity ranking"
+  },
+  "outputs/figures/fig4_drift.png": {
+    "phase": "Phase 11: Figure Generation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/03_figures.ipynb",
+    "rtm_targets": ["F4"],
+    "role": "Figure 4: Lifecycle drift dynamics"
+  },
+  "outputs/figures/fig5_dca.png": {
+    "phase": "Phase 11: Figure Generation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/03_figures.ipynb",
+    "rtm_targets": ["F5"],
+    "role": "Figure 5: Decision curve analysis"
+  },
+  "outputs/figures/fig6_scm.png": {
+    "phase": "Phase 11: Figure Generation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/03_figures.ipynb",
+    "rtm_targets": ["F6"],
+    "role": "Figure 6: SCM DAG"
+  }
+}

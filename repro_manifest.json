@@ -1,0 +1,19 @@
+{
+  "repo_name": "ethical-alpha-audit-paper-5-governance-friction",
+  "version": "1.0.0",
+  "paper": "Paper 5 — Optimising Governance Friction in Medical AI",
+  "target_journal": "npj Digital Medicine",
+  "manuscript_status": "pre-submission",
+  "environment_status": "pinned in requirements.txt and environment.yml",
+  "output_policy": "All deterministic artefacts generated into outputs/ and hash-locked in config/expected_outputs.json",
+  "validation_entry_point": "python reproduce_all.py",
+  "validation_quick": "python scripts/validate_outputs.py",
+  "rtm_targets": 58,
+  "rtm_coverage": "58/58 exact (all via seed-controlled determinism)",
+  "canonical_parameters": {
+    "n_systems": 10000,
+    "random_seed": 42,
+    "python_hash_seed": "0",
+    "python_version": "3.11"
+  }
+}

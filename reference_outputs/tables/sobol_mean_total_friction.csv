@@ -1,0 +1,8 @@
+parameter,S1,S1_conf,ST,ST_conf,status,rank
+safety_gate,0.0,0.05,0.23050780177274566,0.05,configured,1
+calibration_gate,0.0,0.05,0.20718813912147938,0.05,configured,2
+evidence_gate,1.0,0.05,0.17182756615563222,0.05,configured,3
+traceability_gate,0.0,0.05,0.154212306238479,0.05,configured,4
+bias_gate,1.0,0.05,0.11673060765634377,0.05,configured,5
+auditability_noise,0.0,0.05,0.0003811163014939138,0.05,ASSUMED,6
+unsafe_base_rate,0.0,0.05,0.0,0.05,ASSUMED,7

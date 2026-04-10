@@ -1,0 +1,21 @@
+digraph SCM {
+    intrinsic_safety -> baseline_harm;
+    clinical_utility -> baseline_benefit;
+    bias_harm_index -> subgroup_multiplier -> realised_harm;
+    uncertainty_calibration -> abstention_rate;
+    abstention_rate -> escalation_workload;
+    fallback_safety_delta -> fallback_harm;
+    evidence_strength -> audit_signal_quality;
+    evidence_visibility -> audit_signal_quality;
+    traceability_integrity -> audit_signal_quality;
+    audit_signal_quality -> gate_scores;
+    gate_scores -> audit_verdict;
+    stress_robustness -> stress_failure -> realised_harm;
+    drift_susceptibility -> performance_decay;
+    data_shift_rate -> performance_decay;
+    performance_decay -> harm_over_time;
+    performance_decay -> re_audit_trigger;
+    adversarial_gaming_capability -> misreporting_bias;
+    misreporting_bias -> observed_signals;
+    documentation_inflation -> observed_signals;
+}

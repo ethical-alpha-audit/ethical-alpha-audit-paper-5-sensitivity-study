@@ -1,0 +1,36 @@
+{
+  "execution_order": [
+    {
+      "name": "01_simulation_pipeline.ipynb",
+      "path": "notebooks/01_simulation_pipeline.ipynb",
+      "required": true,
+      "expected_outputs": [
+        "outputs/raw/scenario_results.csv",
+        "outputs/raw/compensatory_comparison.csv",
+        "outputs/processed/pareto_solutions.csv",
+        "outputs/processed/simulation_summary.json",
+        "outputs/figures/fig1_frontier.png"
+      ]
+    },
+    {
+      "name": "02_results_and_tables.ipynb",
+      "path": "notebooks/02_results_and_tables.ipynb",
+      "required": true,
+      "expected_outputs": [
+        "outputs/tables/table2_per100_deployments.csv"
+      ]
+    },
+    {
+      "name": "03_figures.ipynb",
+      "path": "notebooks/03_figures.ipynb",
+      "required": true,
+      "expected_outputs": []
+    },
+    {
+      "name": "04_sensitivity_and_inference.ipynb",
+      "path": "notebooks/04_sensitivity_and_inference.ipynb",
+      "required": true,
+      "expected_outputs": []
+    }
+  ]
+}

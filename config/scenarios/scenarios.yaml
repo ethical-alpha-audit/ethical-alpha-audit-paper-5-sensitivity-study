@@ -1,0 +1,29 @@
+# Scenario definitions for governance friction simulation
+
+baseline:
+  description: "Baseline scenario - moderate conditions"
+  unsafe_base_rate: 0.20
+  auditability_noise: 0.05
+  evidence_regime: "mixed"
+  drift_regime: "medium"
+
+low_risk:
+  description: "Low base rate, good evidence"
+  unsafe_base_rate: 0.10
+  auditability_noise: 0.02
+  evidence_regime: "artefact-heavy"
+  drift_regime: "low"
+
+high_risk:
+  description: "High base rate, poor evidence"
+  unsafe_base_rate: 0.30
+  auditability_noise: 0.10
+  evidence_regime: "self-report-heavy"
+  drift_regime: "high"
+
+adversarial:
+  description: "High gaming, moderate risk"
+  unsafe_base_rate: 0.20
+  auditability_noise: 0.08
+  evidence_regime: "mixed"
+  drift_regime: "high"

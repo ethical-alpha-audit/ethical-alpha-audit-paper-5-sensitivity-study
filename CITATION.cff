@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "Optimising Governance Friction in Medical AI: A Monte Carlo Study of Audit Thresholds"
+version: "1.0.0"
+doi: "PLACEHOLDER"
+message: "If you use this repository, please cite the accompanying npj Digital Medicine paper."
+type: software
+authors:
+  - family-names: Brown
+    given-names: Walter
+    orcid: "https://orcid.org/0000-0002-6050-8522"
+    affiliation: "Ethical Alpha Audit Ltd; NHS England"
+repository-code: "https://github.com/ethical-alpha-audit/ethical-alpha-audit-paper-5-governance-friction"
+license: MIT
+date-released: "2026-04-08"
+keywords:
+  - AI governance
+  - Monte Carlo simulation
+  - non-compensatory
+  - Pareto optimisation
+  - clinical AI
+  - reproducibility
+  - governance friction

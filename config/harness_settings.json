@@ -1,0 +1,11 @@
+{
+  "project_name": "eaa-paper-05-governance-friction",
+  "random_seed": 42,
+  "python_hash_seed": "0",
+  "execution_timeout_seconds": 600,
+  "clear_outputs_before_run": true,
+  "fail_fast": true,
+  "logs_dir": "logs",
+  "outputs_dir": "outputs",
+  "notebooks_dir": "notebooks"
+}

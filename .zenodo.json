@@ -1,0 +1,23 @@
+{
+  "title": "Optimising Governance Friction in Medical AI: A Monte Carlo Study of Audit Thresholds — Reproducibility Repository",
+  "description": "Complete reproducibility repository for Paper 5. Contains Monte Carlo simulation framework, NSGA-II optimisation, Sobol sensitivity analysis, Decision Curve Analysis, lifecycle dynamics, and all manuscript figures and tables. One-command execution via reproduce_all.py.",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Brown, Walter",
+      "affiliation": "Ethical Alpha Audit Ltd; NHS England",
+      "orcid": "0000-0002-6050-8522"
+    }
+  ],
+  "keywords": [
+    "AI governance",
+    "Monte Carlo simulation",
+    "non-compensatory",
+    "Pareto optimisation",
+    "clinical AI",
+    "reproducibility",
+    "governance friction"
+  ],
+  "license": "MIT",
+  "access_right": "open"
+}

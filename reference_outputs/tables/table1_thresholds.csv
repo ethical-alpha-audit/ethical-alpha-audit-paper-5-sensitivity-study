@@ -1,0 +1,5 @@
+profile,detection_rate,throughput,fn_harm,friction
+permissive,0.844,0.520,231.6,3.61
+moderate,0.999,0.213,1.8,3.76
+strict,1.000,0.023,0.0,3.95
+very_strict,1.000,0.004,0.0,4.03

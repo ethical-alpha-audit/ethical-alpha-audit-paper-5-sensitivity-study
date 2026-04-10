@@ -1,0 +1,88 @@
+{
+  "description": "Expected output hashes for Paper 5 governance friction simulation. Generated from canonical run (seed=42, n_systems=10000, Python 3.11). Figures excluded from hash validation (platform-dependent rendering); validated via input data integrity.",
+  "files": [
+    {
+      "path": "outputs/raw/scenario_results.csv",
+      "sha256": "77e99b4e13f396f95bcd07c8f66bb8edc408771ab12a2e6480c008d0a1d458e4",
+      "required": true
+    },
+    {
+      "path": "outputs/raw/compensatory_comparison.csv",
+      "sha256": "52b1b57dcfc5acdca40558438e4af519496fa17bb82e221d5a8e53218fcb41ac",
+      "required": true
+    },
+    {
+      "path": "outputs/processed/grid_results.json",
+      "sha256": "55f1003e289f3c4c748af2570ba77ff4bf2063735851603ebd7842f2a52de7d6",
+      "required": true
+    },
+    {
+      "path": "outputs/processed/pareto_solutions.csv",
+      "sha256": "b683c75121eecc4678bdf6012b8441f94d1b41f4b31523b566f82294733e9d0e",
+      "required": true
+    },
+    {
+      "path": "outputs/processed/dca_results.json",
+      "sha256": "816b2e5860a81110389c0a683b120939a515e75613e158a8750225aff881662b",
+      "required": true
+    },
+    {
+      "path": "outputs/processed/inference_results.json",
+      "sha256": "2e03067b631c024d1b234eeb166401539fa0f5ef06c467ac28fc9bdfcd13bc9e",
+      "required": true
+    },
+    {
+      "path": "outputs/processed/simulation_summary.json",
+      "sha256": "fc1eb482d16e0387e70a331b689c60af802f2ba570aa0832e135178aafc6066d",
+      "required": true
+    },
+    {
+      "path": "outputs/tables/table1_thresholds.csv",
+      "sha256": "eddc65ac1a6109901b9412aabd3d1f8b2b323ddcbfeef8bc8fa0d354859e994f",
+      "required": true
+    },
+    {
+      "path": "outputs/tables/table2_pareto.csv",
+      "sha256": "afc782c0eb30da825093ba20660859db0c44d6d7f2b83360d502a458ced20df8",
+      "required": true
+    },
+    {
+      "path": "outputs/tables/sobol_unsafe_detection_rate.csv",
+      "sha256": "115fe10a49a34cbfea42a84e6731ed40994e10ececef4d38a4bd81b82ebb041a",
+      "required": true
+    },
+    {
+      "path": "outputs/tables/sobol_safe_throughput.csv",
+      "sha256": "c2d9b77b2de48e24ea7829bb1d2793ad96de1984788ce3a22422f3519e34787b",
+      "required": true
+    },
+    {
+      "path": "outputs/tables/sobol_false_negative_harm.csv",
+      "sha256": "b982ceeb59af48bc2e3203254260e527e736eaf32e4e4b517bf4aff07b0eeadc",
+      "required": true
+    },
+    {
+      "path": "outputs/tables/sobol_mean_total_friction.csv",
+      "sha256": "143fe9c0ba208bf280c648efb2cd165b45a5a0db826e2e04536231ecfa87f50d",
+      "required": true
+    },
+    {
+      "path": "outputs/logs/validation_report.json",
+      "sha256": "",
+      "required": false,
+      "note": "Validation report structure varies; existence check only"
+    },
+    {
+      "path": "reproducibility/replication_report.json",
+      "sha256": "",
+      "required": false,
+      "note": "Contains timestamp; existence and all_passed=true check only"
+    },
+    {
+      "path": "reproducibility/run_manifest.json",
+      "sha256": "",
+      "required": false,
+      "note": "Contains timestamp; existence check only"
+    }
+  ]
+}

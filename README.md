@@ -1,4 +1,5 @@
 # Optimising Governance Friction in Medical AI: A Monte Carlo Study of Audit Thresholds
+[![DOI](https://zenodo.org/badge/1194633489.svg)](https://doi.org/10.5281/zenodo.19499805)
 
 > **Paper 5** of the Ethical Alpha Audit research programme
 >

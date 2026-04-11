@@ -1,0 +1,5 @@
+metric,min,median,max
+Detection Rate,0.298,0.731,1.000
+Safe Throughput,0.188,0.694,0.887
+FN Harm,0.000,111.491,347.260
+Friction,3.260,3.350,3.547

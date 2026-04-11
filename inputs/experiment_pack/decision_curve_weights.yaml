@@ -1,0 +1,31 @@
+# Decision Curve Analysis Weight Configuration
+# Harm-to-benefit preference thresholds for DCA
+
+version: "1.0.0"
+
+weight_ranges:
+  # Threshold probability range for net benefit calculation
+  # pt = threshold probability at which benefit of intervention equals harm of false positive
+  threshold_probabilities:
+    min: 0.01
+    max: 0.99
+    n_points: 50
+
+  # Clinical interpretation of harm-benefit trade-offs
+  harm_benefit_ratios:
+    description: "Ratio of harm from deploying unsafe system to benefit from deploying safe system"
+    low: 1.0
+    moderate: 5.0
+    high: 10.0
+    extreme: 50.0
+
+  policy_preference_interval:
+    description: "Range of threshold probabilities considered clinically plausible"
+    lower: 0.05
+    upper: 0.50
+    rationale: "ASSUMED - Based on general clinical AI governance literature suggesting 5-50% threshold range is policy-relevant"
+
+justification:
+  source: "Clinical utility literature summary"
+  status: "assumed"
+  notes: "Weight ranges represent plausible harm-benefit trade-offs in medical AI deployment. Low ratios favour permissive governance; high ratios favour strict governance."

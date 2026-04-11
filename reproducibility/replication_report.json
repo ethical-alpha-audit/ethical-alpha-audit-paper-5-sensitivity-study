@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-11T14:45:58.690490Z",
+  "config_hash": "fc17a8cac3e882b9deb14a2f4b368866859e89a533f16de21ff95349274d4ae5",
+  "seed_a": 42,
+  "seed_b": 42,
+  "tolerance": 0.01,
+  "metric_comparisons": {
+    "unsafe_detection_rate": {
+      "build_a": 0.9995,
+      "build_b": 0.9995,
+      "absolute_difference": 0.0,
+      "tolerance": 0.01,
+      "passed": true
+    },
+    "safe_throughput": {
+      "build_a": 0.216875,
+      "build_b": 0.216875,
+      "absolute_difference": 0.0,
+      "tolerance": 0.01,
+      "passed": true
+    },
+    "false_negative_harm": {
+      "build_a": 0.8473340969146678,
+      "build_b": 0.8473340969146678,
+      "absolute_difference": 0.0,
+      "tolerance": 0.01,
+      "passed": true
+    },
+    "mean_total_friction": {
+      "build_a": 3.7661584862690907,
+      "build_b": 3.7661584862690907,
+      "absolute_difference": 0.0,
+      "tolerance": 0.01,
+      "passed": true
+    }
+  },
+  "frontier_overlap": 1.0,
+  "all_passed": true,
+  "summary": "PASS - All metrics within tolerance"
+}

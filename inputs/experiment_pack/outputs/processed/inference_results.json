@@ -1,0 +1,32 @@
+{
+  "detection_mean": 0.9957333333333332,
+  "detection_ci_lower": 0.9938365,
+  "detection_ci_upper": 0.9975511666666667,
+  "detection_std": 0.0049984442023938225,
+  "throughput_mean": 0.20991079365079365,
+  "throughput_ci_lower": 0.2026995873015873,
+  "throughput_ci_upper": 0.2173172916666667,
+  "throughput_std": 0.019408039352850504,
+  "harm_mean": 6.722039455580902,
+  "harm_ci_lower": 3.7690779066568694,
+  "harm_ci_upper": 9.985454472493226,
+  "harm_std": 8.27797893937418,
+  "friction_mean": 3.7652220342537412,
+  "friction_ci_lower": 3.763282983992336,
+  "friction_ci_upper": 3.767333602591728,
+  "friction_std": 0.005134089549379012,
+  "detection_bayesian": {
+    "posterior_mean": 0.9956803455723542,
+    "ci_lower": 0.9948305730415901,
+    "ci_upper": 0.9964550558461084,
+    "alpha_posterior": 24894.0,
+    "beta_posterior": 108.0
+  },
+  "throughput_bayesian": {
+    "posterior_mean": 0.20990320774338053,
+    "ci_lower": 0.20487747051873498,
+    "ci_upper": 0.21497290386261078,
+    "alpha_posterior": 5248.0,
+    "beta_posterior": 19754.0
+  }
+}

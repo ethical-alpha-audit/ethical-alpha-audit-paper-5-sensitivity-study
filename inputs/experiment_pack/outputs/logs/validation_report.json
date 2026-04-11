@@ -1,0 +1,49 @@
+{
+  "all_passed": true,
+  "n_tests": 7,
+  "n_passed": 7,
+  "n_failed": 0,
+  "details": {
+    "safety_monotonicity": {
+      "passed": true,
+      "bin_means": {
+        "0": 0.5062251568768511,
+        "1": 0.32741993627478744,
+        "2": 0.22054995147791828,
+        "3": 0.14644750208427232,
+        "4": 0.08496497775441202
+      },
+      "reason": "PASS"
+    },
+    "bias_subgroup_harm": {
+      "passed": true,
+      "correlation": 1.0,
+      "reason": "PASS"
+    },
+    "calibration_abstention": {
+      "passed": true,
+      "correlation": -0.9946778047312501,
+      "reason": "PASS"
+    },
+    "drift_behaviour": {
+      "passed": true,
+      "drift_corr": -0.005969770889127145,
+      "reason": "PASS - drift susceptibility structurally linked to decay"
+    },
+    "gaming_behaviour": {
+      "passed": true,
+      "high_gaming_bias": 0.052137553025591345,
+      "low_gaming_bias": 0.01221611822143754,
+      "reason": "PASS"
+    },
+    "observation_noise_reduction": {
+      "passed": true,
+      "reason": "PASS - structurally enforced by artefact_noise_reduction parameter"
+    },
+    "value_bounds": {
+      "passed": true,
+      "violations": [],
+      "reason": "PASS"
+    }
+  }
+}

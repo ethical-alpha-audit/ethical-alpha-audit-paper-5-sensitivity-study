@@ -1,0 +1,189 @@
+# Parameter Registry: Governance Friction Simulation
+# All parameters must be registered as sourced / assumed / scenario-defined
+
+simulation:
+  n_systems: 100000
+  n_replicates: 5
+  n_timesteps: 12
+  random_seed: 42
+  paper_mode: false
+
+# Latent trait marginal distributions
+marginals:
+  intrinsic_safety:
+    distribution: beta
+    params: {a: 2.5, b: 2.0}
+    status: assumed
+    rationale: "Right-skewed: most systems moderately safe"
+    causal_role: "parent of baseline_harm"
+
+  clinical_utility:
+    distribution: beta
+    params: {a: 3.0, b: 2.0}
+    status: assumed
+    rationale: "Most systems provide moderate utility"
+    causal_role: "parent of baseline_benefit"
+
+  uncertainty_calibration:
+    distribution: beta
+    params: {a: 2.0, b: 3.0}
+    status: assumed
+    rationale: "Many systems poorly calibrated"
+    causal_role: "parent of abstention_rate"
+
+  bias_harm_index:
+    distribution: beta
+    params: {a: 1.5, b: 4.0}
+    status: assumed
+    rationale: "Most systems low bias; heavy right tail"
+    causal_role: "parent of subgroup_multiplier"
+
+  fallback_safety_delta:
+    distribution: beta
+    params: {a: 3.0, b: 2.0}
+    status: assumed
+    rationale: "Fallback usually safer than AI path"
+    causal_role: "parent of fallback_harm"
+
+  evidence_strength:
+    distribution: beta
+    params: {a: 2.0, b: 2.5}
+    status: assumed
+    rationale: "Moderate evidence quality typical"
+    causal_role: "parent of audit_signal_quality"
+
+  evidence_visibility:
+    distribution: beta
+    params: {a: 2.0, b: 3.0}
+    status: assumed
+    rationale: "Visibility varies widely"
+    causal_role: "parent of audit_signal_quality"
+
+  traceability_integrity:
+    distribution: beta
+    params: {a: 2.5, b: 2.5}
+    status: assumed
+    rationale: "Symmetric around moderate"
+    causal_role: "parent of audit_signal_quality"
+
+  stress_robustness:
+    distribution: beta
+    params: {a: 3.0, b: 2.0}
+    status: assumed
+    rationale: "Most systems tolerably robust"
+    causal_role: "parent of stress_failure"
+
+  drift_susceptibility:
+    distribution: beta
+    params: {a: 2.0, b: 3.0}
+    status: assumed
+    rationale: "Moderate drift susceptibility"
+    causal_role: "parent of performance_decay"
+
+  deployment_volume:
+    distribution: lognormal
+    params: {mean: 6.0, sigma: 1.5}
+    status: assumed
+    rationale: "Log-normal deployment volumes"
+    causal_role: "context variable"
+
+  harm_severity:
+    distribution: beta
+    params: {a: 1.5, b: 3.0}
+    status: assumed
+    rationale: "Most harms minor; right tail severe"
+    causal_role: "context variable"
+
+  data_shift_rate:
+    distribution: beta
+    params: {a: 2.0, b: 4.0}
+    status: assumed
+    rationale: "Low to moderate shift rates"
+    causal_role: "parent of performance_decay"
+
+  adversarial_gaming_capability:
+    distribution: beta
+    params: {a: 1.5, b: 5.0}
+    status: assumed
+    rationale: "Most developers low gaming; few sophisticated"
+    causal_role: "parent of misreporting_bias"
+
+  claimed_performance:
+    distribution: beta
+    params: {a: 4.0, b: 1.5}
+    status: assumed
+    rationale: "Claims tend to be optimistic"
+    causal_role: "observed variable"
+
+# Correlation matrix (lower triangle, row-major)
+correlation_matrix:
+  variables: [intrinsic_safety, clinical_utility, uncertainty_calibration,
+              bias_harm_index, evidence_strength, evidence_visibility,
+              traceability_integrity, stress_robustness, drift_susceptibility,
+              adversarial_gaming_capability]
+  values:
+    - [1.0]
+    - [0.3, 1.0]
+    - [0.4, 0.2, 1.0]
+    - [-0.3, -0.1, -0.2, 1.0]
+    - [0.2, 0.3, 0.3, -0.1, 1.0]
+    - [0.1, 0.2, 0.2, -0.1, 0.5, 1.0]
+    - [0.2, 0.2, 0.3, -0.1, 0.4, 0.4, 1.0]
+    - [0.5, 0.2, 0.3, -0.2, 0.2, 0.1, 0.2, 1.0]
+    - [-0.3, -0.1, -0.2, 0.2, -0.1, -0.1, -0.1, -0.3, 1.0]
+    - [-0.2, -0.1, -0.1, 0.3, -0.2, -0.1, -0.2, -0.1, 0.2, 1.0]
+
+# SCM equation parameters
+scm:
+  baseline_harm:
+    intercept: -3.0
+    slope: 4.0
+
+  subgroup_multiplier:
+    base: 1.0
+    sensitivity: 2.0
+
+  stress_failure:
+    base_rate: 0.05
+    robustness_effect: -3.0
+
+  performance_decay:
+    rate_multiplier: 0.02
+    monitoring_reduction: 0.5
+
+  abstention:
+    cutoff: 0.5
+    sensitivity: 5.0
+
+  fallback_harm:
+    base: 0.1
+    delta_effect: -0.8
+
+# Observation model
+observation:
+  measurement_noise_sd: 0.05
+  artefact_noise_reduction: 0.6
+  misreporting_scale: 0.15
+
+# Friction model
+friction:
+  C_audit_base: 1.0
+  C_delay_per_unit: 0.5
+  C_monitor_base: 0.3
+  C_escalation_base: 2.0
+  C_documentation_base: 0.4
+  C_max: 50.0
+
+# Catastrophic failure (GPD)
+extreme_risk:
+  distribution: generalized_pareto
+  tail_index: 0.3
+  threshold_quantile: 0.95
+  scale: 0.1
+
+# Scenarios
+scenarios:
+  unsafe_base_rate: [0.10, 0.20, 0.30]
+  auditability_noise: [0.02, 0.05, 0.10]
+  evidence_regimes: ["artefact-heavy", "mixed", "self-report-heavy"]
+  drift_regimes: ["low", "medium", "high"]

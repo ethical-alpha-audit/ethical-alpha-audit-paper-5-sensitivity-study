@@ -1,0 +1,39 @@
+# Threshold profiles for governance gate evaluation
+# Each profile defines minimum thresholds for non-compensable gates
+
+profiles:
+  permissive:
+    safety_gate: 0.3
+    evidence_gate: 0.3
+    bias_gate: 0.7  # max allowed bias
+    calibration_gate: 0.3
+    traceability_gate: 0.3
+    drift_trigger: 0.3
+    description: "Minimal governance - low barriers"
+
+  moderate:
+    safety_gate: 0.5
+    evidence_gate: 0.5
+    bias_gate: 0.5
+    calibration_gate: 0.4
+    traceability_gate: 0.4
+    drift_trigger: 0.2
+    description: "Balanced governance"
+
+  strict:
+    safety_gate: 0.7
+    evidence_gate: 0.7
+    bias_gate: 0.3
+    calibration_gate: 0.6
+    traceability_gate: 0.6
+    drift_trigger: 0.1
+    description: "High-stringency governance"
+
+  very_strict:
+    safety_gate: 0.8
+    evidence_gate: 0.8
+    bias_gate: 0.2
+    calibration_gate: 0.7
+    traceability_gate: 0.7
+    drift_trigger: 0.05
+    description: "Maximum governance stringency"

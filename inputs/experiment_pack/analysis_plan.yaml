@@ -1,0 +1,37 @@
+analysis_plan:
+  plan_id: "OGF-Tier1-v5"
+  version: "2026-03-10"
+  hypotheses:
+    H1: "A policy-proportionate governance threshold region exists that detects >=80% unsafe systems while passing >=60% safe systems"
+    H2: "Non-compensable gates outperform compensatory scoring at preventing high-harm deployments"
+    H3: "The proportionate region is robust across plausible distributions and audit imperfections"
+    H4: "Adversarial gaming reduces detection rates but the proportionate region adapts"
+  primary_estimands:
+    - unsafe_detection_rate
+    - safe_throughput
+    - false_negative_harm
+    - total_friction
+  secondary_estimands:
+    - harm_concentration_metrics
+    - re_audit_frequency
+    - escalation_workload
+    - net_benefit_dca
+  scenarios:
+    unsafe_base_rate: [0.10, 0.20, 0.30]
+    auditability_noise: [0.02, 0.05, 0.10]
+    evidence_visibility_regimes: ["artefact-heavy", "mixed", "self-report-heavy"]
+    drift_regimes: ["low", "medium", "high"]
+  search:
+    modes: ["grid", "lhs", "nsga2"]
+    nsga2:
+      generations: 50
+      population: 200
+  inference:
+    bootstrap_samples: 1000
+    dominance_test: true
+    bayesian_rate_intervals: true
+  reporting:
+    primary_figures: ["Fig1_frontier", "Fig2_heatmap", "Fig3_sensitivity", "Fig4_drift", "Fig5_dca", "Fig6_scm"]
+    primary_tables: ["Table1_thresholds", "Table2_pareto", "Table3_sensitivity", "Table4_inference", "Table5_friction"]
+  guardrails:
+    paper_mode_requires_plan_hash: true

@@ -1,0 +1,101 @@
+# SCM Functional Forms Library v1.0
+# All structural equations must be instantiated from this versioned library
+
+version: "1.0.0"
+
+functions:
+  baseline_harm:
+    form: logistic
+    equation: "1 / (1 + exp(-(intercept + slope * (1 - intrinsic_safety))))"
+    parameters:
+      intercept: -3.0
+      slope: 4.0
+    inputs: [intrinsic_safety]
+    output: baseline_harm_probability
+    notes: "Higher intrinsic_safety reduces baseline harm via logistic transform"
+
+  baseline_benefit:
+    form: linear_bounded
+    equation: "clip(clinical_utility * benefit_scale, 0, 1)"
+    parameters:
+      benefit_scale: 0.9
+    inputs: [clinical_utility]
+    output: baseline_benefit
+    notes: "Clinical utility maps directly to benefit"
+
+  subgroup_multiplier:
+    form: linear_positive
+    equation: "base + sensitivity * bias_harm_index"
+    parameters:
+      base: 1.0
+      sensitivity: 2.0
+    inputs: [bias_harm_index]
+    output: subgroup_harm_multiplier
+    notes: "Bias amplifies harm for subgroups"
+
+  stress_failure:
+    form: bernoulli_logistic
+    equation: "Bernoulli(sigmoid(base_rate_logit + robustness_effect * stress_robustness))"
+    parameters:
+      base_rate_logit: -2.94
+      robustness_effect: -3.0
+    inputs: [stress_robustness]
+    output: stress_failure_indicator
+    notes: "Robust systems less likely to fail catastrophically"
+
+  performance_decay:
+    form: cumulative_linear
+    equation: "decay_t + rate_multiplier * drift_susceptibility * data_shift_rate * (1 - monitoring_reduction * monitoring_active)"
+    parameters:
+      rate_multiplier: 0.02
+      monitoring_reduction: 0.5
+    inputs: [drift_susceptibility, data_shift_rate, monitoring_active]
+    output: performance_decay_increment
+    notes: "Drift accumulates; monitoring slows it"
+
+  abstention_rate:
+    form: logistic
+    equation: "1 / (1 + exp(-sensitivity * (cutoff - uncertainty_calibration)))"
+    parameters:
+      cutoff: 0.5
+      sensitivity: 5.0
+    inputs: [uncertainty_calibration]
+    output: abstention_probability
+    notes: "Poorly calibrated systems abstain more often"
+
+  fallback_harm:
+    form: linear_bounded
+    equation: "clip(base + delta_effect * fallback_safety_delta, 0, 1)"
+    parameters:
+      base: 0.1
+      delta_effect: -0.08
+    inputs: [fallback_safety_delta]
+    output: fallback_harm_probability
+    notes: "Better fallback safety reduces fallback harm"
+
+  realised_harm:
+    form: composite
+    equation: "baseline_harm * subgroup_multiplier * (1 + performance_decay) + stress_failure_harm"
+    inputs: [baseline_harm, subgroup_multiplier, performance_decay, stress_failure_harm]
+    output: realised_harm_value
+    notes: "Total harm integrates all sources"
+
+  audit_signal_quality:
+    form: weighted_mean
+    equation: "(w_es * evidence_strength + w_ev * evidence_visibility + w_ti * traceability_integrity) / (w_es + w_ev + w_ti)"
+    parameters:
+      w_es: 0.4
+      w_ev: 0.35
+      w_ti: 0.25
+    inputs: [evidence_strength, evidence_visibility, traceability_integrity]
+    output: signal_quality_score
+    notes: "Weighted combination of evidence dimensions"
+
+  misreporting_model:
+    form: additive_bias
+    equation: "adversarial_gaming_capability * misreporting_scale"
+    parameters:
+      misreporting_scale: 0.15
+    inputs: [adversarial_gaming_capability]
+    output: misreporting_bias_value
+    notes: "Gaming capability introduces positive bias to observations"

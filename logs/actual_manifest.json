@@ -1,89 +1,85 @@
 {
-  "description": "Expected output hashes for Paper 5 governance friction simulation. Generated from canonical run (seed=42, n_systems=10000, Python 3.11). Figures excluded from hash validation (platform-dependent rendering); validated via input data integrity. SHA-256 values below were refreshed after a successful end-to-end Windows execution: bytes can differ from older pins when CSV/JSON float serialization differs in the last digit while numeric tables match reference_outputs within floating tolerance.",
+  "generated_at": "2026-04-11T14:46:16.825868+00:00",
   "files": [
     {
       "path": "outputs/raw/scenario_results.csv",
       "sha256": "f05e2bf24380853531673d8e2a9f6bbefc7ae237521231f6a39a37a28028e3f8",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/raw/compensatory_comparison.csv",
       "sha256": "cdcf21cb465020c4ea027132577b78fa14b14046b08d3c95781c2e22674aff45",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/processed/grid_results.json",
       "sha256": "06f943dae4ba85aed85d9616d87ac4207bf95437f67aa670ebbd2810e26d37fb",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/processed/pareto_solutions.csv",
       "sha256": "ba376bf8ae30fdc0edcb26bb4da0c6b30ec732b7f677ab7071e18cbdeff10dee",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/processed/dca_results.json",
       "sha256": "5a8087bd66442f2d5522981979c9745fb862fde0c5f17f0359803900f6e47032",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/processed/inference_results.json",
       "sha256": "ad3913594aa50f0e8c4eda6b31dd69c2d7ba93e2d44ae9ff88e03df729c336ed",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/processed/simulation_summary.json",
-      "sha256": "",
-      "required": true,
-      "note": "Includes manifest.timestamp (wall clock); hash not stable across runs — existence enforced only"
+      "sha256": "90205d4625f886ae166b77c075adef779a9953d62cc037f2b837c7eb33281135",
+      "exists": true
     },
     {
       "path": "outputs/tables/table1_thresholds.csv",
       "sha256": "a8214ed9dbec62e147bff030e67105b203451eaa82b55b81a9ce700b6f8823f2",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/tables/table2_pareto.csv",
       "sha256": "6f955fbe8a157b92e7d50c58edcfff26b990e6dbfdce626de73c82b70f714688",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/tables/sobol_unsafe_detection_rate.csv",
       "sha256": "b78e20ffdaefcda6e0d4b74be563ca54e5595845b241bfcc024ea121a55c12c3",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/tables/sobol_safe_throughput.csv",
       "sha256": "03b81998a0181f5f7f1a646212bb85c7176d289610c68cb770b72da64131d7c9",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/tables/sobol_false_negative_harm.csv",
       "sha256": "4b7f6b31e5697755afcee6e361516443c37629032520b0e9755a021a015ee14f",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/tables/sobol_mean_total_friction.csv",
       "sha256": "0fdf1914bf30359706a9d7a980054c67845b29e5d426b639cad001860475f6a8",
-      "required": true
+      "exists": true
     },
     {
       "path": "outputs/logs/validation_report.json",
-      "sha256": "",
-      "required": false,
-      "note": "Validation report structure varies; existence check only"
+      "sha256": "69890fa0e011e9e2bd8fd1503d3d4e3ecca92a86198fa7cbe3d85dfb3b9be85c",
+      "exists": true
     },
     {
       "path": "reproducibility/replication_report.json",
-      "sha256": "",
-      "required": false,
-      "note": "Contains timestamp; existence and all_passed=true check only"
+      "sha256": "49b66793ef664c0e80ab5c0c862f0a2d4de3b8af02eb1f33ec1626c7581670cf",
+      "exists": true
     },
     {
       "path": "reproducibility/run_manifest.json",
-      "sha256": "",
-      "required": false,
-      "note": "Contains timestamp; existence check only"
+      "sha256": "4138820eb1035fd81e4e3f441b98faae6f023f844cdae65815769a9b547b65e6",
+      "exists": true
     }
   ]
 }

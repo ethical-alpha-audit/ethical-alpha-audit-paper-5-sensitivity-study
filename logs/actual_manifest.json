@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T11:49:28.892353+00:00",
+  "generated_at": "2026-04-12T12:15:48.557180+00:00",
   "files": [
     {
       "path": "outputs/raw/scenario_results.csv",
@@ -33,7 +33,7 @@
     },
     {
       "path": "outputs/processed/simulation_summary.json",
-      "sha256": "bbee65a5ffd08ca5d64c058c1d7f77a492d437641162d514537167e1ece27a85",
+      "sha256": "10318d9b67c2863d552bd9d946626ec0e070e029913838e4810ed3489307e995",
       "exists": true
     },
     {
@@ -73,12 +73,12 @@
     },
     {
       "path": "reproducibility/replication_report.json",
-      "sha256": "2fb995183c7e92210ca08268282b19c5cf00090e7282b46530323b0e85a4fb89",
+      "sha256": "019c1ff01c5179f39caf3085796060fed0087a92fe49151010408d45c5f64b7b",
       "exists": true
     },
     {
       "path": "reproducibility/run_manifest.json",
-      "sha256": "fab7bab6bd5b1805831e904ce156a8f01b802c220ad25c7219557021ed645e46",
+      "sha256": "d1c95b58fda2328b9aa1f78ceb1b96e0e73dc73138e45aeaf79f25ffee595857",
       "exists": true
     }
   ]

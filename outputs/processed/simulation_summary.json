@@ -1,6 +1,6 @@
 {
   "manifest": {
-    "timestamp": "2026-04-12T11:48:44.809126Z",
+    "timestamp": "2026-04-12T12:15:22.649378Z",
     "plan_hash": "1fba2e2435e8fbf290d95020b1f864b73f241da79fff1a4d947aac9814746b53",
     "config_hash": "fc17a8cac3e882b9deb14a2f4b368866859e89a533f16de21ff95349274d4ae5",
     "n_systems": 10000,
@@ -11,7 +11,7 @@
     "nsga2_pareto_solutions": 60,
     "validation_passed": true,
     "replication_passed": true,
-    "elapsed_seconds": 601.4,
+    "elapsed_seconds": 1163.7,
     "figures_generated": [
       "fig1",
       "fig2",
@@ -103,7 +103,7 @@
     }
   },
   "replication_report": {
-    "timestamp": "2026-04-12T11:48:30.900556Z",
+    "timestamp": "2026-04-12T12:15:09.822222Z",
     "config_hash": "fc17a8cac3e882b9deb14a2f4b368866859e89a533f16de21ff95349274d4ae5",
     "seed_a": 42,
     "seed_b": 42,

@@ -24,6 +24,7 @@ def test_scripts_exist():
         BASE / "scripts" / "notebook_runner.py",
         BASE / "scripts" / "hash_manifest.py",
         BASE / "scripts" / "validate_outputs.py",
+        BASE / "scripts" / "export_html.py",
     ]
     for path in scripts:
         assert path.exists(), f"Missing required script: {path}"
@@ -82,6 +83,21 @@ def test_canonical_n_systems():
     params = yaml.safe_load((BASE / "config" / "parameters.yaml").read_text())
     assert params["simulation"]["n_systems"] == 10000, \
         f"n_systems must be 10000, got {params['simulation']['n_systems']}"
+
+
+def test_notebook_html_exports_exist():
+    """Static HTML exports for reviewer-readable notebooks (parity with other paper repos)."""
+    html_dir = BASE / "docs" / "html"
+    assert html_dir.is_dir(), "Missing docs/html/"
+    expected = [
+        "01_simulation_pipeline.html",
+        "02_results_and_tables.html",
+        "03_figures.html",
+        "04_sensitivity_and_inference.html",
+    ]
+    for name in expected:
+        path = html_dir / name
+        assert path.is_file(), f"Missing HTML export: {path}"
 
 
 def test_notebook_plan_valid():

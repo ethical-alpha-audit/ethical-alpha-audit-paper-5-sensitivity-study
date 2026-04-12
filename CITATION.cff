@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 title: "Optimising Governance Friction in Medical AI: A Monte Carlo Study of Audit Thresholds"
 version: "1.0.0"
-doi: "PLACEHOLDER"
+doi: 10.5281/zenodo.19499806
 message: "If you use this repository, please cite the accompanying npj Digital Medicine paper."
 type: software
 authors:

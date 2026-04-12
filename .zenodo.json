@@ -1,4 +1,5 @@
 {
+  "doi": "10.5281/zenodo.19499806",
   "title": "Optimising Governance Friction in Medical AI: A Monte Carlo Study of Audit Thresholds — Reproducibility Repository",
   "description": "Complete reproducibility repository for Paper 5. Contains Monte Carlo simulation framework, NSGA-II optimisation, Sobol sensitivity analysis, Decision Curve Analysis, lifecycle dynamics, and all manuscript figures and tables. One-command execution via reproduce_all.py.",
   "upload_type": "software",

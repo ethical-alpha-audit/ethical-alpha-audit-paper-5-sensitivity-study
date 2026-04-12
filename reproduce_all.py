@@ -7,6 +7,7 @@ One-command pipeline:
   Step 2: Execute presentation notebooks
   Step 3: Generate SHA-256 output manifest
   Step 4: Validate outputs against expected hashes
+  Step 5: Export notebooks to HTML (docs/html/) for reviewer-readable static copies
 """
 
 import json
@@ -42,7 +43,7 @@ def main():
 
     # Step 1: Run full simulation pipeline
     run_step(
-        "Step 1/4: Simulation pipeline",
+        "Step 1/5: Simulation pipeline",
         [sys.executable, "scripts/run_all.py"],
     )
 
@@ -50,20 +51,26 @@ def main():
     # Step 1 already produced outputs; see notebooks/01_simulation_pipeline.ipynb)
     os.environ["P5_SKIP_EMBEDDED_SIM"] = "1"
     run_step(
-        "Step 2/4: Notebook execution",
+        "Step 2/5: Notebook execution",
         [sys.executable, "scripts/notebook_runner.py"],
     )
 
     # Step 3: Generate output hash manifest
     run_step(
-        "Step 3/4: Manifest generation",
+        "Step 3/5: Manifest generation",
         [sys.executable, "scripts/hash_manifest.py"],
     )
 
     # Step 4: Validate outputs against expected hashes
     run_step(
-        "Step 4/4: Output validation",
+        "Step 4/5: Output validation",
         [sys.executable, "scripts/validate_outputs.py"],
+    )
+
+    # Step 5: HTML export (parity with other paper repositories)
+    run_step(
+        "Step 5/5: HTML export",
+        [sys.executable, "scripts/export_html.py"],
     )
 
     print("\n" + "=" * 60)

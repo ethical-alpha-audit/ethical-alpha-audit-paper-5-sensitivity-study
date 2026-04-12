@@ -40,9 +40,14 @@ def run_notebook(notebook_path: Path, timeout: int, clear_outputs: bool = True):
 
     os.environ["PYTHONHASHSEED"] = "0"
 
+    # nbclient defaults startup_timeout=60 for wait_for_ready(); cold kernels on Windows
+    # (defender, first IPython import) often exceed that while cell timeout stays separate.
+    startup_timeout = min(max(int(timeout), 180), 600)
+
     client = NotebookClient(
         nb,
         timeout=timeout,
+        startup_timeout=startup_timeout,
         kernel_name="python3",
         resources={"metadata": {"path": str(BASE_DIR)}}
     )

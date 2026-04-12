@@ -10,3 +10,7 @@ seaborn>=0.12
 pyyaml>=6.0
 joblib>=1.3
 statsmodels>=0.14
+nbformat>=5.9
+nbclient>=0.8
+jupyter_core>=5.3
+ipykernel>=6.25

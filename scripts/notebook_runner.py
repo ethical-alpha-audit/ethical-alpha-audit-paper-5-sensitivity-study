@@ -1,8 +1,17 @@
+import asyncio
 import json
 import os
 import sys
 import time
+import warnings
 from pathlib import Path
+
+# Windows + Jupyter: avoid Proactor/zmq add_reader warnings and flaky kernels
+if sys.platform == "win32":
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", DeprecationWarning)
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
 import nbformat
 from nbclient import NotebookClient
 

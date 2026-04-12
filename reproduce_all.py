@@ -46,7 +46,9 @@ def main():
         [sys.executable, "scripts/run_all.py"],
     )
 
-    # Step 2: Execute presentation notebooks
+    # Step 2: Execute presentation notebooks (avoid re-running the full simulation in 01_* —
+    # Step 1 already produced outputs; see notebooks/01_simulation_pipeline.ipynb)
+    os.environ["P5_SKIP_EMBEDDED_SIM"] = "1"
     run_step(
         "Step 2/4: Notebook execution",
         [sys.executable, "scripts/notebook_runner.py"],

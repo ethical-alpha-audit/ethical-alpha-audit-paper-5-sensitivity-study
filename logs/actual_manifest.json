@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T12:15:48.557180+00:00",
+  "generated_at": "2026-04-19T10:00:29.303543+00:00",
   "files": [
     {
       "path": "outputs/raw/scenario_results.csv",
@@ -33,7 +33,7 @@
     },
     {
       "path": "outputs/processed/simulation_summary.json",
-      "sha256": "10318d9b67c2863d552bd9d946626ec0e070e029913838e4810ed3489307e995",
+      "sha256": "e9c9823b3ffb7feafc9f0a6321cf357da7a2d4f1e714e8890e063e0179e5ddc1",
       "exists": true
     },
     {
@@ -44,6 +44,11 @@
     {
       "path": "outputs/tables/table2_pareto.csv",
       "sha256": "6f955fbe8a157b92e7d50c58edcfff26b990e6dbfdce626de73c82b70f714688",
+      "exists": true
+    },
+    {
+      "path": "outputs/tables/table2_per100_deployments.csv",
+      "sha256": "2b7f061389ae2876598bda6730322376840a5a8d8da62bdf35392c1f1b6cda83",
       "exists": true
     },
     {
@@ -73,12 +78,12 @@
     },
     {
       "path": "reproducibility/replication_report.json",
-      "sha256": "019c1ff01c5179f39caf3085796060fed0087a92fe49151010408d45c5f64b7b",
+      "sha256": "ce882bf65a5308d92b4925ae063e5411c30f50e8ebeee88024c5bedc11a49b31",
       "exists": true
     },
     {
       "path": "reproducibility/run_manifest.json",
-      "sha256": "d1c95b58fda2328b9aa1f78ceb1b96e0e73dc73138e45aeaf79f25ffee595857",
+      "sha256": "a95ddfa1dca51c56b377b8e96d9c398d3b3a26cc963d69863eedd179d4b585f8",
       "exists": true
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T10:00:29.303543+00:00",
+  "generated_at": "2026-04-19T12:06:46.367097+00:00",
   "files": [
     {
       "path": "outputs/raw/scenario_results.csv",
@@ -33,7 +33,7 @@
     },
     {
       "path": "outputs/processed/simulation_summary.json",
-      "sha256": "e9c9823b3ffb7feafc9f0a6321cf357da7a2d4f1e714e8890e063e0179e5ddc1",
+      "sha256": "ce91e708b88b6a2a47b23b86d76fbd6c400b4fa11663ea253c74a4422431321e",
       "exists": true
     },
     {
@@ -78,12 +78,12 @@
     },
     {
       "path": "reproducibility/replication_report.json",
-      "sha256": "ce882bf65a5308d92b4925ae063e5411c30f50e8ebeee88024c5bedc11a49b31",
+      "sha256": "194dd4bcc4bb0fbff31b5f707f9ea019855293658efe329e5f6518d0052efb17",
       "exists": true
     },
     {
       "path": "reproducibility/run_manifest.json",
-      "sha256": "a95ddfa1dca51c56b377b8e96d9c398d3b3a26cc963d69863eedd179d4b585f8",
+      "sha256": "7e99412d179c3260c8b0c76908884ed4f50a4f8bdaec049d4c5e29fa514ff607",
       "exists": true
     }
   ]

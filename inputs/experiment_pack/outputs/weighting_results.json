@@ -1,0 +1,75 @@
+{
+  "experiment_id": "A05",
+  "pipeline": "full_p5_scm",
+  "n_systems": 10000,
+  "n_replicates": 5,
+  "start_time": "2026-04-14T22:02:47.273949+00:00",
+  "end_time": "2026-04-14T22:02:48.854661+00:00",
+  "results": [
+    {
+      "weighting_id": "W0",
+      "w_safety": 0.3,
+      "w_evidence": 0.2,
+      "w_bias": 0.2,
+      "w_calibration": 0.15,
+      "w_traceability": 0.15,
+      "nc_detection_mean": 0.9983,
+      "c_detection_mean": 0.7719,
+      "nc_fn_harm_mean": 2.1,
+      "c_fn_harm_mean": 323.1,
+      "harm_ratio": 152.3
+    },
+    {
+      "weighting_id": "W1",
+      "w_safety": 0.2,
+      "w_evidence": 0.2,
+      "w_bias": 0.2,
+      "w_calibration": 0.2,
+      "w_traceability": 0.2,
+      "nc_detection_mean": 0.9983,
+      "c_detection_mean": 0.7226,
+      "nc_fn_harm_mean": 2.1,
+      "c_fn_harm_mean": 406.2,
+      "harm_ratio": 191.4
+    },
+    {
+      "weighting_id": "W2",
+      "w_safety": 0.5,
+      "w_evidence": 0.125,
+      "w_bias": 0.125,
+      "w_calibration": 0.125,
+      "w_traceability": 0.125,
+      "nc_detection_mean": 0.9983,
+      "c_detection_mean": 0.9203,
+      "nc_fn_harm_mean": 2.1,
+      "c_fn_harm_mean": 106.7,
+      "harm_ratio": 50.3
+    },
+    {
+      "weighting_id": "W3",
+      "w_safety": 0.15,
+      "w_evidence": 0.35,
+      "w_bias": 0.15,
+      "w_calibration": 0.2,
+      "w_traceability": 0.15,
+      "nc_detection_mean": 0.9983,
+      "c_detection_mean": 0.7323,
+      "nc_fn_harm_mean": 2.1,
+      "c_fn_harm_mean": 409.2,
+      "harm_ratio": 192.8
+    },
+    {
+      "weighting_id": "W4",
+      "w_safety": 0.1,
+      "w_evidence": 0.225,
+      "w_bias": 0.225,
+      "w_calibration": 0.225,
+      "w_traceability": 0.225,
+      "nc_detection_mean": 0.9983,
+      "c_detection_mean": 0.6476,
+      "nc_fn_harm_mean": 2.1,
+      "c_fn_harm_mean": 528.8,
+      "harm_ratio": 249.2
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+W0: safety=0.30, evidence=0.20, bias=0.20, calibration=0.15, traceability=0.15
+W1: safety=0.20, evidence=0.20, bias=0.20, calibration=0.20, traceability=0.20
+W2: safety=0.50, evidence=0.125, bias=0.125, calibration=0.125, traceability=0.125
+W3: safety=0.15, evidence=0.35, bias=0.15, calibration=0.20, traceability=0.15
+W4: safety=0.10, evidence=0.225, bias=0.225, calibration=0.225, traceability=0.225
+Compensatory threshold: 0.50

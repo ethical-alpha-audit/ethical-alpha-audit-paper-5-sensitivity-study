@@ -1,0 +1,13 @@
+{
+  "bundle": "Paper5_Experiments",
+  "generated": "2026-04-15T21:02:40+00:00",
+  "files": [
+    {"path": "README.txt", "sha256": "e9b583331d450620eb89bf569cde38b6500b2371aa5de82a1ad45c8daef8e048"}
+    ,
+    {"path": "configs/weighting_schemes.txt", "sha256": "d2f4f39a90494130344833523ce1abbe519accae77aeb313852a40bc19b30b17"}
+    ,
+    {"path": "outputs/weighting_comparison.csv", "sha256": "b66e43149d746b06eb9052f57a09bfc70bde16b744e918ea479ef821c839b262"}
+    ,
+    {"path": "outputs/weighting_results.json", "sha256": "d2837403003c3527e8bc7a19c391e3bd7e84ee2bef39837dfff3088cc75bfafd"}
+  ]
+}

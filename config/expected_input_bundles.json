@@ -1,0 +1,10 @@
+{
+  "description": "Frozen input bundles (supplementary / sensitivity) verified by SHA-256 against bundled manifests. Paths are repo-relative.",
+  "bundles": [
+    {
+      "id": "paper5_weighting_sensitivity_A05",
+      "root": "inputs/experiment_pack",
+      "manifest": "inputs/experiment_pack/manifest.json"
+    }
+  ]
+}

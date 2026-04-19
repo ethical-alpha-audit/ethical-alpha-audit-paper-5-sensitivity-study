@@ -11,6 +11,7 @@ def test_harness_files_exist():
         BASE / "reproduce_all.py",
         BASE / "config" / "notebook_plan.json",
         BASE / "config" / "expected_outputs.json",
+        BASE / "config" / "expected_input_bundles.json",
         BASE / "config" / "harness_settings.json",
         BASE / "config" / "trace_map.json",
     ]

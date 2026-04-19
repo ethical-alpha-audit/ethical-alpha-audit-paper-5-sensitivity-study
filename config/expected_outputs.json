@@ -48,6 +48,11 @@
       "required": true
     },
     {
+      "path": "outputs/tables/table2_per100_deployments.csv",
+      "sha256": "2b7f061389ae2876598bda6730322376840a5a8d8da62bdf35392c1f1b6cda83",
+      "required": true
+    },
+    {
       "path": "outputs/tables/sobol_unsafe_detection_rate.csv",
       "sha256": "b78e20ffdaefcda6e0d4b74be563ca54e5595845b241bfcc024ea121a55c12c3",
       "required": true

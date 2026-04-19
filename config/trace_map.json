@@ -94,8 +94,43 @@
     "phase": "Derived in Notebook 02",
     "script": "notebooks/02_results_and_tables.ipynb",
     "notebook": "notebooks/02_results_and_tables.ipynb",
-    "rtm_targets": ["T2", "N6", "N7", "N39"],
+    "rtm_targets": ["T2", "N6", "N7", "N39", "P5-C18"],
     "role": "Manuscript Table 2 (per-100 deployments)"
+  },
+  "outputs/logs/validation_report.json": {
+    "phase": "Phase 1: Internal validation",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/01_simulation_pipeline.ipynb",
+    "rtm_targets": ["P5-C12", "P5-C28"],
+    "role": "Seven-test validation suite report"
+  },
+  "reproducibility/replication_report.json": {
+    "phase": "Phase 10: Deterministic replication",
+    "script": "scripts/run_all.py",
+    "notebook": "notebooks/01_simulation_pipeline.ipynb",
+    "rtm_targets": ["P5-C13", "P5-C29"],
+    "role": "Replication tolerance check vs baseline metrics"
+  },
+  "inputs/experiment_pack/outputs/weighting_comparison.csv": {
+    "phase": "Supplementary bundle A05 (frozen)",
+    "script": "inputs/experiment_pack (frozen sensitivity run)",
+    "notebook": "—",
+    "rtm_targets": ["P5-C33"],
+    "role": "Alternative compensatory gate weights — harm ratios vs NC baseline"
+  },
+  "inputs/experiment_pack/outputs/weighting_results.json": {
+    "phase": "Supplementary bundle A05 (frozen)",
+    "script": "inputs/experiment_pack (frozen sensitivity run)",
+    "notebook": "—",
+    "rtm_targets": ["P5-C33"],
+    "role": "Per-scheme detailed metrics for weighting sensitivity"
+  },
+  "inputs/statement_bindings/physionet_reference_scope.yaml": {
+    "phase": "Statement binding (inputs)",
+    "script": "—",
+    "notebook": "—",
+    "rtm_targets": ["P5-C34"],
+    "role": "PhysioNet / WFDB citation scope — synthetic SCM empirical basis"
   },
   "outputs/figures/fig1_frontier.png": {
     "phase": "Phase 11: Figure Generation",

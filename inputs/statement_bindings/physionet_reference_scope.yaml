@@ -1,0 +1,23 @@
+# In-repo binding for PhysioNet / WFDB / related-dataset citations in manuscript inputs.
+# This file does not import external data; it documents scope so traceability can be VERIFIED.
+
+binding_version: "1.0"
+dataset_family: "PhysioNet / WFDB-style clinical signal archives (citation context only)"
+
+scope:
+  empirical_basis: "synthetic_scm_pipeline"
+  statement: |
+    Any PhysioNet, WFDB, or MIMIC-derivative references appearing in
+    inputs/manuscript.docx or inputs/supplementary.pdf are limited to
+    methodology framing, credential examples, or external benchmark context.
+    This repository does not download, cache, or process PhysioNet patient-level
+    waveforms or clinical identifiers. Quantitative Paper 5 results are produced
+    only by the governance-friction simulation (see claims P5-C01–P5-C31).
+
+manuscript_inputs:
+  - "inputs/manuscript.docx"
+  - "inputs/supplementary.pdf"
+
+primary_code_binding:
+  - "config/parameters.yaml"
+  - "src/generators/observation_model.py"

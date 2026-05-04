@@ -1,19 +1,51 @@
 {
-  "repo_name": "ethical-alpha-audit-paper-5-sensitivity-study",
-  "version": "1.0.0",
-  "paper": "Paper 5 — Optimising Governance Friction in Medical AI",
-  "target_journal": "npj Digital Medicine",
-  "manuscript_status": "pre-submission",
-  "environment_status": "pinned in requirements.txt and environment.yml",
-  "output_policy": "All deterministic artefacts generated into outputs/ and hash-locked in config/expected_outputs.json",
-  "validation_entry_point": "python reproduce_all.py",
-  "validation_quick": "python scripts/validate_outputs.py",
-  "rtm_targets": 58,
-  "rtm_coverage": "58/58 exact (all via seed-controlled determinism)",
-  "canonical_parameters": {
-    "n_systems": 10000,
-    "random_seed": 42,
-    "python_hash_seed": "0",
-    "python_version": "3.11"
-  }
+  "version": "2.0.0",
+  "manuscript_alignment": "Paper5_Manuscript_FINAL_submission_v2.docx",
+  "manifest_sha256": "1e47682d64317f708f115e584d94b255473ca0b05a2f1a49834f8ac394963ea5",
+  "analysis_plan_hash": "1fba2e24",
+  "seed": 42,
+  "python_hash_seed": 0,
+  "python_version": "3.11",
+  "regimes": [
+    "AR1",
+    "AR2",
+    "AR3",
+    "AR_lifecycle",
+    "AR_replication",
+    "AR_nsga2",
+    "AR_sobol_N1024",
+    "AR_sobol_progression",
+    "AR_decoupled_scm",
+    "AR_weighting_scheme_sensitivity"
+  ],
+  "docs": [
+    "regime_dictionary.md",
+    "scm_dependency_audit.md",
+    "comparator_scope.md",
+    "independence_statement.md",
+    "methods_note.md",
+    "programme_context.md"
+  ],
+  "sobol_n_progression": [
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "sobol_primary_n": 1024,
+  "nsga2_seeds": [
+    42,
+    123,
+    7777
+  ],
+  "compute_backend": "standalone Python 3.11 numpy/pandas/scipy/networkx; no external SALib/pymoo dependencies for primary outputs",
+  "stage7_complete": true,
+  "stage7_timestamp": "2026-04-28T19:50:00Z",
+  "replication_verified": true,
+  "replication_zero_abs_diff": true,
+  "stage7_figures_regenerated": [
+    "fig1_frontier.png (no sweet-spot)",
+    "fig3_sensitivity.png (N=1024 with bootstrap CI error bars)"
+  ]
 }

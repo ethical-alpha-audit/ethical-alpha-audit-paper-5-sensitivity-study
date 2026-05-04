@@ -33,7 +33,6 @@ This repository contains the complete computational pipeline for the Paper 5 man
 |--------|------------|
 | Table 1 | 4 threshold profiles: moderate achieves 99.9% detection, 21.3% throughput |
 | Table 2 | 0.04 unsafe per 100 deployments (NC) vs 4.56 (compensatory) |
-| Table 3 | 60 Pareto-optimal configurations; 20 in policy sweet-spot |
 | Figures 1–6 | Pareto frontier, heatmap, sensitivity, drift, DCA, SCM DAG |
 | Sobol analysis | Safety gate ST = 1.00 for detection and harm |
 | Lifecycle | 0.033 mean decay, 10.1% re-audit rate over 12 periods |

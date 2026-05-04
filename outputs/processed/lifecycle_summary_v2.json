@@ -1,0 +1,8 @@
+{
+  "regime": "AR_lifecycle",
+  "n_periods": 12,
+  "drift_regime": "medium",
+  "mean_final_decay": 0.032538604578577504,
+  "mean_cumulative_drift": 0.20908160295181233,
+  "re_audit_rate": 0.0992
+}

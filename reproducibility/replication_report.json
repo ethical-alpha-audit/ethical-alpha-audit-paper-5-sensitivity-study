@@ -1,40 +1,36 @@
 {
-  "timestamp": "2026-04-19T12:06:23.802104Z",
-  "config_hash": "fc17a8cac3e882b9deb14a2f4b368866859e89a533f16de21ff95349274d4ae5",
+  "regime": "AR_replication_v2_final",
   "seed_a": 42,
   "seed_b": 42,
   "tolerance": 0.01,
+  "n_replicates_per_build": 5,
+  "n_systems_per_replicate": 10000,
   "metric_comparisons": {
     "unsafe_detection_rate": {
-      "build_a": 0.9995,
-      "build_b": 0.9995,
+      "build_a": 0.9987,
+      "build_b": 0.9987,
       "absolute_difference": 0.0,
-      "tolerance": 0.01,
       "passed": true
     },
     "safe_throughput": {
-      "build_a": 0.216875,
-      "build_b": 0.216875,
+      "build_a": 0.21795,
+      "build_b": 0.21795,
       "absolute_difference": 0.0,
-      "tolerance": 0.01,
       "passed": true
     },
     "false_negative_harm": {
-      "build_a": 0.8473340969146678,
-      "build_b": 0.8473340969146678,
+      "build_a": 1.6901129143644595,
+      "build_b": 1.6901129143644595,
       "absolute_difference": 0.0,
-      "tolerance": 0.01,
       "passed": true
     },
     "mean_total_friction": {
-      "build_a": 3.7661584862690907,
-      "build_b": 3.7661584862690907,
+      "build_a": 3.76054669689152,
+      "build_b": 3.76054669689152,
       "absolute_difference": 0.0,
-      "tolerance": 0.01,
       "passed": true
     }
   },
-  "frontier_overlap": 1.0,
   "all_passed": true,
-  "summary": "PASS - All metrics within tolerance"
+  "summary": "PASS - All metrics within tolerance (zero absolute difference)"
 }

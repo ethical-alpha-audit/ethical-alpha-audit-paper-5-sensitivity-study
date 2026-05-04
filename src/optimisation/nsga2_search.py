@@ -1,3 +1,9 @@
+DEPRECATION_NOTE = """
+The identify_sweet_spot function is DEPRECATED as of repository v2.0.
+Sweet-spot framing has been removed from the manuscript and supplementary materials
+per Stage 5 patch P-W01–W03 (RC-14 Plan B). Function retained only for backward
+compatibility with reference_outputs/. Do not call in new analyses.
+"""
 """Multi-objective Policy Optimisation using NSGA-II (standalone implementation)."""
 import numpy as np
 

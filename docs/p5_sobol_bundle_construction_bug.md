@@ -576,3 +576,35 @@ patch + `finalise_v2_1.py` + `validate_v2_1.py` + 11 gates).
 | 2026-05-04 ~11:30Z | Bug confirmed; root cause identified | Diagnostic verdict |
 | 2026-05-04 (this memo) | Phase 3.3a-bugfix Step 1 | Walter ack of Option (i) |
 | (pending) | Step 2-7 execution | Walter ack of memo content |
+
+---
+
+## Related finding: validator path-assumption mismatch
+
+During Phase 3.5 of WS-3 (final 11-gate validation), `validate_v2_1.py`
+was found to have hardcoded paths assuming the runbook's
+`p5_workspace/` layout (.docx files alongside `repo/` subdirectory).
+Our portfolio convention places canonical .docx files at
+`inputs/manuscript.docx` and `inputs/supplementary.docx` (repo-
+internal, persistent-M per no-commit-manuscripts policy).
+
+The path mismatch caused validator to read empty strings for
+MS and SUPP content. G-2 and G-6 forbidden-tokens checks passed
+vacuously across empty strings rather than checking actual content.
+
+Out-of-band verification confirmed canonical inputs were
+forbidden-token-clean. Validator was patched at Phase 3.5 to
+add canonical-inputs fallback (3-line addition; commit
+message at WS-3 Phase 3.5 validate_v2_1.py path-assumption fix).
+
+This is the same family as the Sobol bundle bug:
+LLM-pipeline-delivered scripts can have setup assumptions that
+don't match downstream portfolio practice. Per Phase 14 record
+item 14 (LLM-pipeline output integrity), the discipline is to
+patch the script to match actual setup rather than work around
+the mismatch.
+
+Forward applicability: when receiving LLM-pipeline-delivered
+validation or processing scripts, verify path assumptions against
+the actual repo layout before treating script results as
+authoritative.

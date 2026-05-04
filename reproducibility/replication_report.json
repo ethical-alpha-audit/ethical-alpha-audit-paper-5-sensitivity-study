@@ -1,5 +1,5 @@
 {
-  "regime": "AR_replication_v2_final",
+  "regime": "AR_replication_v2_1",
   "seed_a": 42,
   "seed_b": 42,
   "tolerance": 0.01,
@@ -32,5 +32,5 @@
     }
   },
   "all_passed": true,
-  "summary": "PASS - All metrics within tolerance (zero absolute difference)"
+  "summary": "PASS - All metrics within tolerance"
 }

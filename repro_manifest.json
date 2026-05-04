@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "manuscript_alignment": "Paper5_Manuscript_FINAL_submission_v2.docx",
-  "manifest_sha256": "1e47682d64317f708f115e584d94b255473ca0b05a2f1a49834f8ac394963ea5",
+  "manifest_sha256": "d2c550b22656658da89fdaa17ff9b8f2d0e6d33bbfed399e47980b2cec97da69",
   "analysis_plan_hash": "1fba2e24",
   "seed": 42,
   "python_hash_seed": 0,
@@ -27,25 +27,20 @@
     "programme_context.md"
   ],
   "sobol_n_progression": [
-    64,
     128,
     256,
     512,
-    1024
+    1024,
+    2048
   ],
-  "sobol_primary_n": 1024,
+  "sobol_primary_n": 2048,
   "nsga2_seeds": [
     42,
     123,
     7777
   ],
-  "compute_backend": "standalone Python 3.11 numpy/pandas/scipy/networkx; no external SALib/pymoo dependencies for primary outputs",
-  "stage7_complete": true,
-  "stage7_timestamp": "2026-04-28T19:50:00Z",
+  "compute_backend": "Python 3.11 with numpy/pandas/scipy/networkx; SALib v1.5.2 for Sobol total-order estimator (Saltelli-design independent A/B sample matrices; bootstrap percentile CIs)",
   "replication_verified": true,
   "replication_zero_abs_diff": true,
-  "stage7_figures_regenerated": [
-    "fig1_frontier.png (no sweet-spot)",
-    "fig3_sensitivity.png (N=1024 with bootstrap CI error bars)"
-  ]
+  "sobol_sampler": "scipy.stats.qmc.Sobol (Owen-scrambled)"
 }

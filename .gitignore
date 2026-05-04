@@ -13,3 +13,6 @@ outputs/release_bundle/*.zip
 # operations memory for the full rule.
 inputs/*.docx
 inputs/*.pdf
+
+# WS-3 staging directory (forensic merge + Sobol bundle workspaces)
+.tmp/

@@ -324,6 +324,113 @@ re-examination.
 
 ---
 
+## Companion finding: v2.0 ZIP also contains corrupted manuscript files (Phase 3.4 Step 0 discovery)
+
+A second LLM-pipeline corruption was discovered at WS-3 Phase 3.4
+Step 0 (manuscript reading pre-flight). The v2.0 ZIP
+(`Paper5 Reproducibility Artefact FINAL.zip`, sha `01cfc5fb...`)
+contains DIFFERENT manuscript and supplement files than the
+canonical Desktop standalone versions. The ZIP versions appear to
+be products of a stripped/re-rendered pipeline pass that:
+
+- Lost most of the manuscript section structure (no `Methods`,
+  `Results`, `Discussion`, `Limitations`, `Conclusions`,
+  `Declarations`, `Multimedia Appendices`, or `Figure legends`
+  headings as separate sections)
+- Lost the proper Sobol N=1024 narrative (the runbook §5
+  find-strings reference text that does NOT exist in the ZIP
+  manuscript)
+- Reduced the supplement to a 7-line skeleton (only Appendix A
+  "Reserved" and Appendix B "PhysioNet" present; missing
+  Appendices A "Aggregation regime dictionary", B "Comparator
+  scope", C "SCM coupling", D "Sobol re-executed", E "NSGA-II
+  convergence", F "Per-weighting", G "Reproducibility manifest"
+  that the canonical version contains)
+- Re-introduced `sweet-spot` framing into the manuscript
+  (4-5 occurrences in the ZIP version vs 0 occurrences in the
+  canonical Desktop version; the canonical Stage 5 P-W01-W03
+  cleanup IS reflected in the standalone)
+
+### Verification data
+
+| File | Canonical Desktop | v2.0 ZIP extract |
+|---|---:|---:|
+| Manuscript size | 23,248 B | 29,506 B |
+| Manuscript SHA-256 | `48a794ef...` | `97eb5bb8...` |
+| Manuscript char count | 41,896 | 39,639 |
+| Manuscript line count | 159 | 100 |
+| Manuscript headings | 42 | 14 |
+| Supplement size | 15,457 B | 8,880 B |
+| Supplement SHA-256 | `743a8bed...` | `8accdcab...` |
+| Supplement char count | 15,229 | 2,074 |
+| Supplement line count | 99 | 7 |
+| Supplement appendices | A-G (7) | A-B skeleton (2) |
+| Manuscript runbook §5 find-strings present | 9/9 ✅ | 0/9 ❌ |
+| Supplement runbook §6 find-strings present | 4/4 ✅ | 0/4 ❌ |
+| Sweet-spot mentions in manuscript | **0** | 4-5 |
+| Sweet-spot mentions in supplement | 0 | 0 |
+
+The standalone Desktop versions ARE the canonical v2.0 baseline
+that the runbook's §5 + §6 templates were authored against.
+
+### Recovery action (Phase 3.4 Step 0)
+
+1. The `inputs/manuscript.docx` and `inputs/supplementary.docx`
+   in the repo were replaced filesystem-only with the canonical
+   Desktop standalone versions per the no-commit-manuscripts
+   policy. The replacement preserves the canonical content as the
+   Phase 3.4 editing baseline.
+2. The legacy-tracked status of those two files (per
+   `feedback_derivative_artefact_desync.md` Case B) means they
+   show as persistent M; the M is NOT staged or committed by
+   this commit (consistent with Walter's standing
+   no-commit-manuscripts policy).
+3. The WS-6 hygiene workstream is the appropriate venue for
+   `git rm --cached` of the legacy-tracked entries, alongside
+   the broader portfolio legacy-manuscript-untracking item.
+
+### Sweet-spot Patch 3 disposition (operational vs scientific)
+
+The canonical v2.0 manuscript does NOT include sweet-spot framing.
+The Patch 3 disposition is therefore framed as TWO distinct decisions:
+
+**Operational disposition (v2.1 release)**: DROP. The v2.1 release
+operates on the canonical v2.0 baseline (post-corruption-correction).
+The canonical baseline does not include sweet-spot framing. v2.1
+release must be internally consistent with that baseline.
+
+**Scientific disposition (v2.2+ or future releases)**: DEFERRED to
+WS-Release-P5 Stage 5 cleanup audit. The substantive scientific
+question — is sweet-spot a valid finding from the underlying
+experimental work (NSGA-II Pareto frontier characterisation;
+joint-threshold region selection)? — is NOT determined by the v2.1
+operational disposition. The audit will examine NSGA-II output
+analytical legitimacy, MCDA literature, Stage 5 P-W01-W03 removal
+rationale, post-bugfix Sobol findings, and editorial history. Audit
+outcomes determine future-release disposition (restore on principled
+basis; permanent omission; partial restoration with revised framing).
+
+The operational disposition is NOT a scientific determination;
+conflating the two would treat the manuscript as authoritative over
+the experiment, violating the strengthened experiment-authoritative
+rule.
+
+### Connection to the strengthened experiment-authoritative discipline
+
+This second corruption finding strengthens the case for the
+LLM-pipeline-correctness extension to
+`feedback_experiment_authoritative_manuscript_downstream.md`. The
+Sobol bundle bug was an UPSTREAM computational corruption (biased
+Sobol indices); the manuscript corruption is a DOWNSTREAM
+publication-pipeline corruption (re-rendered manuscript losing
+structure + content). Both pass surface-level validation gates
+(file existence; manifest consistency); both require diagnostic
+verification against canonical reference (SALib for Sobol; Desktop
+standalone for manuscript) to detect.
+
+The forward checklist below applies to both upstream and downstream
+LLM-pipeline failure modes.
+
 ## Forward checklist for similar workstreams
 
 When executing a workstream that:

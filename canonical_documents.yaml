@@ -53,7 +53,7 @@ axes:
 
   notebook:
     structure: standard-notebooks-directory
-    axis_status_summary: needs-investigation
+    axis_status_summary: clean
     documents:
       - filename: notebooks/01_simulation_pipeline.ipynb
         canonical_path: notebooks/01_simulation_pipeline.ipynb
@@ -63,16 +63,16 @@ axes:
         last_known_modified: 2026-05-04T10:30:20
         status: present-in-canonical
         candidate_source_location: null
-        notes: CLEAN per Phase 3.8 (0 errors)
+        notes: CLEAN per Phase 3.8 (0 errors); not re-executed at v2.1.1 (out of patch scope)
       - filename: notebooks/02_results_and_tables.ipynb
         canonical_path: notebooks/02_results_and_tables.ipynb
         source_location: inputs-direct
-        canonical_sha256: 62a68376972e5659e5976081fc893f5dbc578c67bcbfb0c7870c474258255239
-        size_bytes: 10070
-        last_known_modified: 2026-05-04T10:30:20
-        status: referenced-but-uncertain-status
+        canonical_sha256: cf92ac1b34996e21f3f93915cab52c767f9a5b019b372fdde6a75b266a2dc57e
+        size_bytes: 11469
+        last_known_modified: 2026-05-07T11:23:55
+        status: present-in-canonical
         candidate_source_location: null
-        notes: "STALE per Phase 3.8 (3 errors): cell 7 KeyError throughput; cell 9 KeyError in_sweet_spot (sweet-spot column removed); cell 11 AssertionError ~0.772 (assertion stale; current value 0.7675); v2.1.1 candidate fixes b/c/d"
+        notes: "v2.1.1 patches applied: cell 7 column-name updates (3 cascading: throughput->safe_throughput; detection_rate->unsafe_detection_rate; fn_harm->false_negative_harm); cell 9 sweet-spot subset removed; cell 11 6 sub-fixes (c_det 0.772->0.7675; pareto count 60->50; sweet assertion remove; lifecycle path repath to lifecycle_summary_v2.json; mean_total_harm assertion drop per experiment-authoritative discipline; re_audit_rate left). Re-executed clean end-to-end."
       - filename: notebooks/03_figures.ipynb
         canonical_path: notebooks/03_figures.ipynb
         source_location: inputs-direct
@@ -81,16 +81,16 @@ axes:
         last_known_modified: 2026-05-04T10:30:20
         status: present-in-canonical
         candidate_source_location: null
-        notes: CLEAN per Phase 3.8 (0 errors); large file due to embedded fig outputs
+        notes: CLEAN per Phase 3.8 (0 errors); not re-executed at v2.1.1 (out of patch scope); references v2.1.1-regenerated fig3 PNG (300 DPI; SHA 8ce7630db1bc3113...)
       - filename: notebooks/04_sensitivity_and_inference.ipynb
         canonical_path: notebooks/04_sensitivity_and_inference.ipynb
         source_location: inputs-direct
-        canonical_sha256: a092b76e5e99292bcbc28f362b34a4a851d76a0562a18f6608f0182592e4b0cf
-        size_bytes: 11501
-        last_known_modified: 2026-05-05T15:39:16
-        status: referenced-but-uncertain-status
+        canonical_sha256: d26c257eb2416801b5b390ac46006019cb447d2276ab3c6911173476584881f1
+        size_bytes: 12890
+        last_known_modified: 2026-05-07T11:24:07
+        status: present-in-canonical
         candidate_source_location: null
-        notes: "STALE per Phase 3.8 (1 error): cell 2 KeyError throughput_bayesian (key not in current inference_results.json); v2.1.1 candidate fix e (investigate Bayesian-scope reduction)"
+        notes: "v2.1.1 patches applied: cell 5 throughput_bayesian print line removed (key not in current inference_results.json; Bayesian-scope reduction investigation deferred to WS-Release-P5); cell 9 mid-execution scope expansion (3 stale assertions vs corrected v2.1.0 Sobol pipeline updated to ~0.725, ~0.698, ~0.993 with ±0.005 tolerance; underlying `== 1.0` strict assertions are Stage-5-era artefacts of buggy v2.0 pipeline — Stage 5 audit follow-up). Re-executed clean end-to-end."
 
   multimedia:
     structure: not-applicable
@@ -129,7 +129,7 @@ destination_workstreams:
 
 sync_metadata:
   procedural_storage_match_required: true
-  last_sync_check: null
+  last_sync_check: 2026-05-07T11:24:07
   paper_drift_summary: clean
   per_axis_drift_summary:
     manuscript: clean
@@ -147,4 +147,5 @@ provenance:
     - "Phase 3.8 notebook execution findings"
     - "Phase 1 R4 audit"
     - "Live SHA metadata gathered 2026-05-06"
-  last_revision_basis: "Initial deployment authoring per Task 1 STEP 1"
+    - "WS-Sub-P5 v2.1.1 notebook patch execution 2026-05-07 (Task 3)"
+  last_revision_basis: "v2.1.1 notebook patch deployment per WS-Sub-P5 Task 3 (notebook axis STALE -> CURRENT; expanded scope: cell 11 6 sub-fixes + cell 9 mid-execution expansion + fig3 DPI cohesive lifecycle artefact refresh)"

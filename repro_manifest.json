@@ -1,7 +1,7 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "manuscript_alignment": "Paper5_Manuscript_FINAL_submission_v2.docx",
-  "manifest_sha256": "d2c550b22656658da89fdaa17ff9b8f2d0e6d33bbfed399e47980b2cec97da69",
+  "manifest_sha256": "999bfa72e9915375cbfeb642fb8e04d68133cf992d63da86e0f499fe20756e29",
   "analysis_plan_hash": "1fba2e24",
   "seed": 42,
   "python_hash_seed": 0,

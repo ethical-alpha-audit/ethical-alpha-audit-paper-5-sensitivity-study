@@ -69,7 +69,7 @@ for ax, (oc_key, oc_label) in zip(axes, OUTCOMES):
 plt.tight_layout()
 fig_path = REPO / "outputs" / "figures" / "fig3_sensitivity.png"
 fig_path.parent.mkdir(parents=True, exist_ok=True)
-plt.savefig(fig_path, dpi=150, bbox_inches="tight")
+plt.savefig(fig_path, dpi=300, bbox_inches="tight")
 plt.close()
 print(f"  Wrote {fig_path}")
 
@@ -119,7 +119,7 @@ print("Step 3/3: Update repro_manifest.json + VERSION")
 print("=" * 60)
 
 repro = json.load(open(REPO / "repro_manifest.json"))
-repro["version"] = "2.1.0"
+repro["version"] = "2.1.1"
 repro["manifest_sha256"] = mhash
 repro["sobol_primary_n"] = 2048
 repro["sobol_sampler"] = "scipy.stats.qmc.Sobol (Owen-scrambled)"
@@ -149,9 +149,9 @@ for stale_key in ("stage7_complete", "stage7_timestamp",
                   "stage8_complete", "stage8_summary"):
     repro.pop(stale_key, None)
 json.dump(repro, open(REPO / "repro_manifest.json", "w"), indent=2)
-(REPO / "VERSION").write_text("2.1.0\n")
-print(f"  repro_manifest.json updated (version 2.1.0)")
-print(f"  VERSION set to 2.1.0")
+(REPO / "VERSION").write_text("2.1.1\n")
+print(f"  repro_manifest.json updated (version 2.1.1)")
+print(f"  VERSION set to 2.1.1")
 
 # Print the new headline values for use in manuscript / supplement updates
 print("\n" + "=" * 60)

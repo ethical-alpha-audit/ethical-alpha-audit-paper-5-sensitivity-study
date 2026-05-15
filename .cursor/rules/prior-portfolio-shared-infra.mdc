@@ -15,6 +15,6 @@ When writing or reviewing code:
 - **Engine modules** (`engine/`) hold the operational audit engine. Paper 4 has the canonical structure; other papers should follow it.
 - **Tests** live in `tests/` at the repo root, with one test module per source module being tested.
 - **Configs** live in `config/` (parameter YAMLs), `thresholds/` (threshold profiles), and `analysis_plan.yaml` at the repo root.
-- **Inputs to experiments** live in `inputs/experiment_pack/`. The user-facing manuscript lives in `inputs/manuscript.docx`.
+- **Inputs to experiments** live in `inputs/experiment_pack/`. The user-facing manuscript lives in `inputs/paper5_sensitivity_study_manuscript.docx`.
 
 If you find a piece of code that should be cross-paper but is duplicated across paper repos, surface it: `flag for hoist to shared-repro-core`. Do not auto-hoist; cross-paper code changes affect every consumer and need user approval.

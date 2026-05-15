@@ -13,7 +13,7 @@ editorial_commitments:
   submission_status: released
   variant_lock_history:
     - locked_at: 2026-05-04
-      variant: "manuscript.docx (v2.1)"
+      variant: "paper5_sensitivity_study_manuscript.docx (v2.1)"
       sha: fa35a0b58e4529ab9a782ebe008a356b8a1eb5b8288632607ad919d322adc437
       target_journal_at_lock: null
       decision_basis: "WS-3 Phase 3.4 manuscript edits applied v2.1 N=2048 Owen-scrambled SALib content; v2.1.0 tag at commit 612012e on v2-1-from-v2-0 branch"
@@ -27,8 +27,8 @@ axes:
     structure: single-file
     axis_status_summary: clean
     documents:
-      - filename: manuscript.docx
-        canonical_path: inputs/manuscript.docx
+      - filename: paper5_sensitivity_study_manuscript.docx
+        canonical_path: inputs/paper5_sensitivity_study_manuscript.docx
         source_location: inputs-direct
         canonical_sha256: fa35a0b58e4529ab9a782ebe008a356b8a1eb5b8288632607ad919d322adc437
         size_bytes: 23405
@@ -41,8 +41,8 @@ axes:
     structure: single-file
     axis_status_summary: clean
     documents:
-      - filename: supplementary.docx
-        canonical_path: inputs/supplementary.docx
+      - filename: paper5_sensitivity_study_supplementary.docx
+        canonical_path: inputs/paper5_sensitivity_study_supplementary.docx
         source_location: inputs-direct
         canonical_sha256: b819b7342c4d1dafbfa1fa0f5711de5e8214f976c6103768e06b0efb9f047ab9
         size_bytes: 15715

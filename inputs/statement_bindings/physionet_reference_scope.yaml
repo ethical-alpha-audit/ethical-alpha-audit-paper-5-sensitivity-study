@@ -8,15 +8,15 @@ scope:
   empirical_basis: "synthetic_scm_pipeline"
   statement: |
     Any PhysioNet, WFDB, or MIMIC-derivative references appearing in
-    inputs/manuscript.docx or inputs/supplementary.pdf are limited to
+    inputs/paper5_sensitivity_study_manuscript.docx or inputs/paper5_sensitivity_study_supplementary.docx are limited to
     methodology framing, credential examples, or external benchmark context.
     This repository does not download, cache, or process PhysioNet patient-level
     waveforms or clinical identifiers. Quantitative Paper 5 results are produced
     only by the governance-friction simulation (see claims P5-C01–P5-C31).
 
 manuscript_inputs:
-  - "inputs/manuscript.docx"
-  - "inputs/supplementary.pdf"
+  - "inputs/paper5_sensitivity_study_manuscript.docx"
+  - "inputs/paper5_sensitivity_study_supplementary.docx"
 
 primary_code_binding:
   - "config/parameters.yaml"

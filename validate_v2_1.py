@@ -133,9 +133,9 @@ if not SUPP_PATH.exists():
     SUPP_PATH = REPO.parent / "Paper5_Supplementary_Materials_FINAL_submission_v2.docx"
 # NEW: fall back to in-repo canonical inputs (no-commit-manuscripts policy)
 if not MS_PATH.exists():
-    MS_PATH = REPO / "inputs" / "manuscript.docx"
+    MS_PATH = REPO / "inputs" / "paper5_sensitivity_study_manuscript.docx"
 if not SUPP_PATH.exists():
-    SUPP_PATH = REPO / "inputs" / "supplementary.docx"
+    SUPP_PATH = REPO / "inputs" / "paper5_sensitivity_study_supplementary.docx"
 
 MS = extract_text(MS_PATH)
 SUPP = extract_text(SUPP_PATH)

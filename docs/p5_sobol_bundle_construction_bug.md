@@ -375,7 +375,7 @@ that the runbook's §5 + §6 templates were authored against.
 
 ### Recovery action (Phase 3.4 Step 0)
 
-1. The `inputs/manuscript.docx` and `inputs/supplementary.docx`
+1. The `inputs/paper5_sensitivity_study_manuscript.docx` and `inputs/paper5_sensitivity_study_supplementary.docx`
    in the repo were replaced filesystem-only with the canonical
    Desktop standalone versions per the no-commit-manuscripts
    policy. The replacement preserves the canonical content as the
@@ -585,7 +585,7 @@ During Phase 3.5 of WS-3 (final 11-gate validation), `validate_v2_1.py`
 was found to have hardcoded paths assuming the runbook's
 `p5_workspace/` layout (.docx files alongside `repo/` subdirectory).
 Our portfolio convention places canonical .docx files at
-`inputs/manuscript.docx` and `inputs/supplementary.docx` (repo-
+`inputs/paper5_sensitivity_study_manuscript.docx` and `inputs/paper5_sensitivity_study_supplementary.docx` (repo-
 internal, persistent-M per no-commit-manuscripts policy).
 
 The path mismatch caused validator to read empty strings for

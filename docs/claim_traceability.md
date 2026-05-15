@@ -1,7 +1,7 @@
 # Claim Traceability Matrix (P5)
 
 **Repo:** ethical-alpha-audit-paper-5-sensitivity-study  
-**Manuscript sources:** `inputs/manuscript.docx`, `inputs/supplementary.pdf` (supplementary supports appendices; primary empirical claims traced below to main text).  
+**Manuscript sources:** `inputs/paper5_sensitivity_study_manuscript.docx`, `inputs/paper5_sensitivity_study_supplementary.docx` (supplementary supports appendices; primary empirical claims traced below to main text).  
 **Updated:** 2026-04-19 (P5 claim coverage — VERIFIED promotion + supplementary bindings)  
 **CLAIM EXTRACTION COMPLETE: 34 claims identified for P5** (P5-C01–P5-C34; P5-C32 remains cross-repo **External**)
 
@@ -38,7 +38,7 @@
 | P5-C30 | Decision Curve Analysis supports policy comparison under preferences | `src/analysis/dca.py`; Phase 8 | `outputs/processed/dca_results.json`; `fig5_dca.png` | VERIFIED |
 | P5-C31 | Grid search over safety × evidence gates | `run_grid_search`; Phase 4 | `outputs/processed/grid_results.json` | VERIFIED |
 | P5-C33 | Supplementary **A05** — five alternative compensatory gate-weight schemes; NC vs compensatory false-negative harm ratio **50.3×** (most favourable compensatory) to **249.2×** (least favourable) | Frozen bundle under `inputs/experiment_pack/` (`manifest.json`, `configs/weighting_schemes.txt`) | `inputs/experiment_pack/outputs/weighting_comparison.csv`; `inputs/experiment_pack/outputs/weighting_results.json` | VERIFIED |
-| P5-C34 | PhysioNet / WFDB-family references in `inputs/manuscript.docx` / `inputs/supplementary.pdf`: **citation and external-benchmark scope only** — no PhysioNet patient series ingested or processed in this repository | `inputs/statement_bindings/physionet_reference_scope.yaml`; synthetic observation path in `config/parameters.yaml`, `src/generators/observation_model.py` | Same manuscript inputs (when present); scope file is the auditable binding | VERIFIED |
+| P5-C34 | PhysioNet / WFDB-family references in `inputs/paper5_sensitivity_study_manuscript.docx` / `inputs/paper5_sensitivity_study_supplementary.docx`: **citation and external-benchmark scope only** — no PhysioNet patient series ingested or processed in this repository | `inputs/statement_bindings/physionet_reference_scope.yaml`; synthetic observation path in `config/parameters.yaml`, `src/generators/observation_model.py` | Same manuscript inputs (when present); scope file is the auditable binding | VERIFIED |
 | P5-C32 | Companion historical replay / Core-12 statistics (91.7% sensitivity, specificity 1.000, etc.) | **Cross-repo (P4)** — manuscript cites unified engine; not recomputed in this repo | Escalation: verify against `ethical-alpha-audit-paper-4-historical-replay` frozen artefact | External |
 
 ## Compensatory anchoring (explicit + implicit)

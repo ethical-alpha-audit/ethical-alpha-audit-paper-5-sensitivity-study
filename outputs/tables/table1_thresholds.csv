@@ -1,5 +1,5 @@
-profile,detection_rate,throughput,fn_harm,friction
-permissive,0.844,0.520,231.6,3.61
-moderate,0.999,0.213,1.8,3.76
-strict,1.000,0.023,0.0,3.95
-very_strict,1.000,0.004,0.0,4.03
+profile,regime,unsafe_detection_rate,safe_throughput,false_negative_harm,mean_total_friction
+permissive,AR1_threshold_profile,0.8628933333333333,0.5098398412698413,232.31157573214426,3.6117090566107475
+moderate,AR1_threshold_profile,0.9934866666666667,0.20951285714285714,11.223525015451116,3.765624253347683
+strict,AR1_threshold_profile,0.9999866666666667,0.023102619047619052,0.023332789150837478,3.952198859312731
+very_strict,AR1_threshold_profile,1.0,0.0038391269841269843,0.0,4.0284613789653125

@@ -1,0 +1,151 @@
+# canonical_documents.yaml — P5 (sensitivity study)
+# Schema version: 1.0
+# Workstream: WS-CANONICAL-SOURCE-AUTOMATION
+# Disposition (per WS-AUDIT-DOF Pass 1): manuscript COMPLETE-AND-CURRENT; notebook STALE (deferred to v2.1.1)
+
+paper:
+  identifier: P5
+  repo_directory: ethical-alpha-audit-paper-5-sensitivity-study
+  procedural_storage_subdir: paper-5-sensitivity-study
+
+editorial_commitments:
+  target_journal: null
+  submission_status: released
+  variant_lock_history:
+    - locked_at: 2026-05-04
+      variant: "manuscript.docx (v2.1)"
+      sha: fa35a0b58e4529ab9a782ebe008a356b8a1eb5b8288632607ad919d322adc437
+      target_journal_at_lock: null
+      decision_basis: "WS-3 Phase 3.4 manuscript edits applied v2.1 N=2048 Owen-scrambled SALib content; v2.1.0 tag at commit 612012e on v2-1-from-v2-0 branch"
+      retired_variants:
+        - filename: "Paper5 Manuscript FINAL submission v2.docx"
+          sha: 48a794ef3a67a0f44491b63a15afd5ea205473ea00215757c28ac2070100e104
+          retention_location: "Desktop/May Bank Holiday/Paper 5/ (v2.0 baseline retained as historical reference)"
+
+axes:
+  manuscript:
+    structure: single-file
+    axis_status_summary: clean
+    documents:
+      - filename: manuscript.docx
+        canonical_path: inputs/manuscript.docx
+        source_location: inputs-direct
+        canonical_sha256: fa35a0b58e4529ab9a782ebe008a356b8a1eb5b8288632607ad919d322adc437
+        size_bytes: 23405
+        last_known_modified: 2026-05-04T16:11:49
+        status: present-in-canonical
+        candidate_source_location: null
+        notes: "v2.1 content per WS-3 Phase 3.4 (post-Refinement 1+2+3); bit-exact mirror in procedural storage; numerical values verified against sobol_convergence.json bit-exactly"
+
+  supplementary:
+    structure: single-file
+    axis_status_summary: clean
+    documents:
+      - filename: supplementary.docx
+        canonical_path: inputs/supplementary.docx
+        source_location: inputs-direct
+        canonical_sha256: b819b7342c4d1dafbfa1fa0f5711de5e8214f976c6103768e06b0efb9f047ab9
+        size_bytes: 15715
+        last_known_modified: 2026-05-04T16:11:49
+        status: present-in-canonical
+        candidate_source_location: null
+        notes: "v2.1 content (Appendices A-G + Tables S1-S6); JMIR-style single-file packaging"
+
+  notebook:
+    structure: standard-notebooks-directory
+    axis_status_summary: clean
+    documents:
+      - filename: notebooks/01_simulation_pipeline.ipynb
+        canonical_path: notebooks/01_simulation_pipeline.ipynb
+        source_location: inputs-direct
+        canonical_sha256: 46b4d457605694bc7493ebc99b0d1155cddc44566bf8a2df83516952f9cecd82
+        size_bytes: 9266
+        last_known_modified: 2026-05-04T10:30:20
+        status: present-in-canonical
+        candidate_source_location: null
+        notes: CLEAN per Phase 3.8 (0 errors); not re-executed at v2.1.1 (out of patch scope)
+      - filename: notebooks/02_results_and_tables.ipynb
+        canonical_path: notebooks/02_results_and_tables.ipynb
+        source_location: inputs-direct
+        canonical_sha256: cf92ac1b34996e21f3f93915cab52c767f9a5b019b372fdde6a75b266a2dc57e
+        size_bytes: 11469
+        last_known_modified: 2026-05-07T11:23:55
+        status: present-in-canonical
+        candidate_source_location: null
+        notes: "v2.1.1 patches applied: cell 7 column-name updates (3 cascading: throughput->safe_throughput; detection_rate->unsafe_detection_rate; fn_harm->false_negative_harm); cell 9 sweet-spot subset removed; cell 11 6 sub-fixes (c_det 0.772->0.7675; pareto count 60->50; sweet assertion remove; lifecycle path repath to lifecycle_summary_v2.json; mean_total_harm assertion drop per experiment-authoritative discipline; re_audit_rate left). Re-executed clean end-to-end."
+      - filename: notebooks/03_figures.ipynb
+        canonical_path: notebooks/03_figures.ipynb
+        source_location: inputs-direct
+        canonical_sha256: 89f038baf6230c08195efaabbf4e514a9aad47ce091a1918c60d83710963f2ac
+        size_bytes: 2547219
+        last_known_modified: 2026-05-04T10:30:20
+        status: present-in-canonical
+        candidate_source_location: null
+        notes: CLEAN per Phase 3.8 (0 errors); not re-executed at v2.1.1 (out of patch scope); references v2.1.1-regenerated fig3 PNG (300 DPI; SHA 8ce7630db1bc3113...)
+      - filename: notebooks/04_sensitivity_and_inference.ipynb
+        canonical_path: notebooks/04_sensitivity_and_inference.ipynb
+        source_location: inputs-direct
+        canonical_sha256: d26c257eb2416801b5b390ac46006019cb447d2276ab3c6911173476584881f1
+        size_bytes: 12890
+        last_known_modified: 2026-05-07T11:24:07
+        status: present-in-canonical
+        candidate_source_location: null
+        notes: "v2.1.1 patches applied: cell 5 throughput_bayesian print line removed (key not in current inference_results.json; Bayesian-scope reduction investigation deferred to WS-Release-P5); cell 9 mid-execution scope expansion (3 stale assertions vs corrected v2.1.0 Sobol pipeline updated to ~0.725, ~0.698, ~0.993 with ±0.005 tolerance; underlying `== 1.0` strict assertions are Stage-5-era artefacts of buggy v2.0 pipeline — Stage 5 audit follow-up). Re-executed clean end-to-end."
+
+  multimedia:
+    structure: not-applicable
+    axis_status_summary: not-applicable
+    documents: []
+
+destination_workstreams:
+  - workstream: WS-Sub-P5
+    class: F.vague
+    consolidated_template_applies: true
+    paper_specific_gate_iii: "v2.1.1 release shipped (notebook patches + fig3 DPI upgrade + WS-Release-P5 Stage 5 cleanup audit disposition resolved)"
+    obligations_routed_here:
+      - "v2.1.1 candidate fixes: nb 02 cells 7/9/11 (KeyError throughput; KeyError in_sweet_spot; AssertionError ~0.772)"
+      - "v2.1.1 candidate fix: nb 04 cell 2 (KeyError throughput_bayesian)"
+      - "v2.1.1 candidate fix: fig3 resolution upgrade 150 to 300 DPI (per Phase 3.7a Patch 2-extension)"
+      - "Investigate sweet-spot column removal coordinate with WS-Release-P5 Stage 5 audit"
+      - "Investigate Bayesian-scope reduction (intentional design vs unintentional regression)"
+    blocking_status: blocked-pending-trigger-remediation
+  - workstream: WS-Release-P5-extended-scope
+    class: F.absent
+    obligations_routed_here:
+      - "Stage 5 cleanup audit (4-step forbidden-token disposition for sweet-spot, _FLAGGED, 152-fold)"
+      - "Sweet-spot v2.2 release possibility (if reinstatement warranted by audit)"
+      - "WS-3 Phase 3.7a Patch 2 deferrals (fig1 substantive content under audit; fig3 resolution upgrade)"
+    blocking_status: blocked-pending-trigger-remediation
+  - workstream: WS-Release-P5-standard-portion
+    class: E-inherited
+    obligations_routed_here:
+      - "Standard lifecycle traversal (already at released per v2.1.0; future v2.1.1 / v2.2 releases follow same pattern)"
+    blocking_status: trigger-satisfied
+  - workstream: WS-6
+    class: A
+    obligations_routed_here:
+      - "P5 legacy-tracked manuscripts cleanup (per memo line 204; future P5 .docx hygiene if needed)"
+    blocking_status: in-progress
+
+sync_metadata:
+  procedural_storage_match_required: true
+  last_sync_check: 2026-05-07T11:24:07
+  paper_drift_summary: clean
+  per_axis_drift_summary:
+    manuscript: clean
+    supplementary: clean
+    notebook: clean
+    multimedia: not-applicable
+  per_document_drift_detail: []
+
+provenance:
+  schema_version: "1.0"
+  authored_at: 2026-05-06T20:30:00
+  authored_by: "WS-CANONICAL-SOURCE-AUTOMATION Task 1 STEP 1 deployment"
+  audit_basis:
+    - "WS-AUDIT-DOF Pass 1 P5 audit (closure summary Section 1 row 1 + Section 7 row P5)"
+    - "Phase 3.8 notebook execution findings"
+    - "Phase 1 R4 audit"
+    - "Live SHA metadata gathered 2026-05-06"
+    - "WS-Sub-P5 v2.1.1 notebook patch execution 2026-05-07 (Task 3)"
+  last_revision_basis: "v2.1.1 notebook patch deployment per WS-Sub-P5 Task 3 (notebook axis STALE -> CURRENT; expanded scope: cell 11 6 sub-fixes + cell 9 mid-execution expansion + fig3 DPI cohesive lifecycle artefact refresh)"

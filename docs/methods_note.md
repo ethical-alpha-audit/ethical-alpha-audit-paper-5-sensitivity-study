@@ -1,46 +1,67 @@
-# Methods Note
+# Methods Note (v2.0)
+**Repository:** ethical-alpha-audit-paper-5-sensitivity-study
 
-## Simulation Framework
+## Summary of methodological choices
 
-This repository implements a Monte Carlo simulation framework for evaluating governance friction in medical AI deployment. The framework models the complete governance pipeline: from latent AI system properties, through noisy audit observation, to governance decisions and lifecycle outcomes.
+This document records key methodological choices made during Stage 7 repository
+re-execution and their rationale. These notes complement the Methods section
+of the main paper.
 
-## Structural Causal Model (SCM)
+### 1. Sobol global sensitivity (RC-02 Plan A)
+- Original execution used N = 64 base samples (576 total Saltelli samples) and
+  hard-coded confidence-interval values (S1_conf = ST_conf = 0.05). The
+  resulting indices (notably ST(safety_gate) ≈ 1.00 on detection rate) were
+  unstable artefacts of insufficient sampling.
+- Stage 7 re-execution: N-progression over N ∈ {64, 128, 256, 512, 1024} with
+  a 50–200-resample bootstrap on each index value. At N = 1024 (primary), all
+  CIs are tight enough to interpret. The N-progression diagnostic is archived
+  in `outputs/processed/sobol_convergence.json` and demonstrates convergence
+  of ST(safety_gate) to ≈ 0.6 with 95% bootstrap CI within [0.43, 0.69].
+- Sobol n_systems (per-sample evaluation budget): 400 at N=1024 (compute
+  budget); 1,500 at N ≤ 512.
 
-A directed acyclic graph with 28 nodes and 19 edges encodes causal relationships among latent traits, intermediate variables, and outcome nodes. All structural equations are instantiated from a versioned function library (`scm_functions.yaml` v1.0).
+### 2. NSGA-II multi-seed convergence (RC-06)
+- Original execution reported 60 candidate Pareto-optimal solutions at the
+  search budget specified (population 60, 30 generations) without convergence
+  diagnostics.
+- Stage 7 re-execution: 3 seeds (42, 123, 7777) with per-generation hypervolume
+  trajectory computed against reference point (1.0, 1.0) on (1−detection,
+  1−throughput). Frontier overlap is computed pairwise as the fraction of
+  seed-A Pareto points within tolerance 0.05 of nearest seed-B point.
+- Per-seed Pareto count and final hypervolume are archived in
+  `outputs/processed/pareto_seed_stability.csv` and the full HV trajectory
+  in `outputs/processed/nsga2_convergence.json`.
 
-Key functional forms:
-- **Baseline harm:** logistic function of intrinsic safety (intercept = −3.0, slope = 4.0)
-- **Subgroup harm:** linear in bias_harm_index (base = 1.0, sensitivity = 2.0)
-- **Stress failure:** Bernoulli-logistic (base rate ~5%, robustness effect = −3.0)
-- **Performance decay:** multiplicative drift model (rate = 0.02, monitoring reduction = 0.5)
+### 3. Decoupled-variant SCM (RC-04 Plan A)
+- The implemented variant introduces an independent latent `harm_latent ~
+  Beta(2.5, 2.0)` to drive baseline_harm in place of intrinsic_safety.
+- The safety-gate observation continues to derive from intrinsic_safety with
+  measurement noise, so the observed safety signal contains no information
+  about harm in the variant.
+- Result is reported alongside the coupled-SCM result for direct sensitivity
+  quantification (`outputs/processed/scm_coupling_sensitivity.json`).
 
-## System Generation
+### 4. Weighting-scheme sensitivity (RC-03)
+- Five weighted-average composite weighting schemes evaluated against the
+  baseline non-compensatory architecture under regime AR2 conditions
+  (paired runs, base rate 20%, 5 replicates each).
 
-Synthetic AI systems are generated using a Gaussian copula with Beta marginal distributions for bounded traits and lognormal for deployment volume. A 10×10 correlation matrix encodes associations justified by the SCM structure. Each evaluation generates 10,000 systems.
+### 5. Lifecycle aggregation (RC-12)
+- The `mean_cumulative_drift` field has been added to the lifecycle summary
+  (`outputs/processed/lifecycle_summary_v2.json`). Per-period drift
+  trajectories are archived at `outputs/processed/lifecycle_per_period.csv`.
+- Detailed lifecycle interpretation in the main paper remains downscoped per
+  RC-12 fallback decision; numerical aggregates are provided for traceability
+  but no detailed lifecycle inference is made in the main text.
 
-## Observation Model
+### 6. Sweet-spot framing removal (RC-14 Plan B)
+- The `identify_sweet_spot` function in `src/optimisation/nsga2_search.py` has
+  been deprecated; `outputs/processed/pareto_solutions.csv` no longer carries
+  an `in_sweet_spot` column. Reference outputs (legacy) have been stripped
+  of this column.
 
-Observed audit signals are derived from true latent traits through three layers:
-1. Measurement noise (base SD = 0.05, reduced by artefact availability)
-2. Evidence regime effects (artefact-heavy, mixed, self-report-heavy)
-3. Adversarial misreporting bias proportional to gaming capability (scale = 0.15)
-
-## Governance Policy Engine
-
-The Tier-1 governance model implements five non-compensable gates: safety, evidence quality, bias (inverted), calibration, and traceability. A system is approved only if all five observed gate scores meet their respective thresholds. A compensatory (composite scoring) comparator is also implemented.
-
-## Multi-Objective Optimisation
-
-NSGA-II explores the five-dimensional threshold space over 30 generations with population 60, optimising four objectives simultaneously: maximise detection, maximise throughput, minimise false-negative harm, minimise friction.
-
-## Sobol Sensitivity Analysis
-
-Variance-based global sensitivity analysis with 7 parameters (5 gate thresholds + auditability noise + unsafe base rate) using 64 base samples and quasi-random Saltelli sampling.
-
-## Decision Curve Analysis
-
-Net benefit computed across a range of harm–benefit preference thresholds for all governance policies, following the Vickers & Elkin (2006) framework.
-
-## Extreme Risk Modelling
-
-Tail risks modelled via the Generalized Pareto Distribution (tail index = 0.3, threshold at 95th percentile).
+### 7. Companion-paper severance (RC-05)
+- All references to unpublished companion papers have been removed from the
+  repository documentation. The framework is positioned as a stand-alone
+  methodological contribution with no load-bearing dependency on companion
+  programme content.

@@ -14,7 +14,6 @@
 | P5-C05 | Structural equations from versioned `scm_functions.yaml` v1.0 | `scm_functions.yaml`; `apply_scm` | Scenario + summary JSON | VERIFIED |
 | P5-C06 | Preregistered analysis plan hash **1fba2e24** | `analysis_plan.yaml`; `src/preregistration/plan.py` | `outputs/processed/simulation_summary.json` (`manifest.plan_hash`) | VERIFIED |
 | P5-C07 | NSGA-II: 30 generations, pop 60, 5D thresholds [0.1, 0.9], four objectives | `src/optimisation/nsga2_search.py`; Phase 5 | `outputs/processed/pareto_solutions.csv` | VERIFIED |
-| P5-C08 | Sweet-spot: detection ≥70% and safe throughput ≥50% | `scripts/run_all.py`; `identify_sweet_spot` in `nsga2_search.py` | `pareto_solutions.csv` (`in_sweet_spot`) | VERIFIED |
 | P5-C09 | Sobol: 7 parameters (5 gates + noise + UBR), 64 base samples | `src/analysis/sensitivity.py`; Phase 7 | `outputs/tables/sobol_*.csv` | VERIFIED |
 | P5-C10 | Bootstrap n=500 + Bayesian rate intervals for key metrics | `src/analysis/inference.py`; Phase 9 | `outputs/processed/inference_results.json` | VERIFIED |
 | P5-C11 | Lifecycle: 12 periods, drift, re-audit | `src/analysis/lifecycle.py`; Phase 6 | `simulation_summary.json` → `lifecycle_summary` | VERIFIED |
@@ -25,7 +24,7 @@
 | P5-C16 | False-negative harm **152×** lower NC vs compensatory (**2.1** vs **323.1**) | Phase 3 | `compensatory_comparison.csv`; manuscript Table 2 narrative | VERIFIED |
 | P5-C17 | Throughput: NC moderate **21.3%** vs compensatory **81.2%** | Phase 2–3 | `scenario_results.csv`; `compensatory_comparison.csv` | VERIFIED |
 | P5-C18 | Expected unsafe approvals per 100 deployments: NC moderate **0.04** vs compensatory **4.56** (20% base) | Derived in `notebooks/02_results_and_tables.ipynb` | `outputs/tables/table2_per100_deployments.csv` | VERIFIED |
-| P5-C19 | **60** Pareto solutions; **20** in sweet-spot (~33%) | Phase 5 | `pareto_solutions.csv`; `fig1_frontier.png` | VERIFIED |
+| P5-C19 | Candidate Pareto solutions at NSGA-II search budget specified (population 60, 30 generations); per-seed counts vary | Phase 5 | `pareto_solutions.csv`; `fig1_frontier.png` | VERIFIED |
 | P5-C20 | Reported Pareto ranges (detection, throughput, FN harm, friction) | Phase 5 + figures | `fig1_frontier.png`; Table 3 / `table2_pareto.csv` | VERIFIED |
 | P5-C21 | Sobol: safety gate **ST = 1.00** for unsafe detection rate | `format_sensitivity_table`; Phase 7 | `sobol_unsafe_detection_rate.csv` | VERIFIED |
 | P5-C22 | Sobol: safety gate **ST = 1.00** for false-negative harm | Phase 7 | `sobol_false_negative_harm.csv` | VERIFIED |

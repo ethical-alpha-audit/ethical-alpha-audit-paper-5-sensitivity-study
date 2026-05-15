@@ -1,188 +1,223 @@
 {
-  "manifest": {
-    "timestamp": "2026-04-19T12:06:29.669941Z",
-    "plan_hash": "1fba2e2435e8fbf290d95020b1f864b73f241da79fff1a4d947aac9814746b53",
-    "config_hash": "fc17a8cac3e882b9deb14a2f4b368866859e89a533f16de21ff95349274d4ae5",
-    "n_systems": 10000,
-    "n_replicates": 5,
-    "n_scenarios": 5,
-    "n_profiles": 4,
-    "total_evaluations": 100,
-    "nsga2_pareto_solutions": 60,
-    "validation_passed": true,
-    "replication_passed": true,
-    "elapsed_seconds": 347.8,
-    "figures_generated": [
-      "fig1",
-      "fig2",
-      "fig3",
-      "fig4",
-      "fig5",
-      "fig6"
-    ]
-  },
-  "validation_report": {
-    "all_passed": true,
-    "n_tests": 7,
-    "n_passed": 7,
-    "n_failed": 0,
-    "details": {
-      "safety_monotonicity": {
-        "passed": true,
-        "bin_means": {
-          "0": 0.5062251568768511,
-          "1": 0.32741993627478744,
-          "2": 0.22054995147791828,
-          "3": 0.14644750208427232,
-          "4": 0.08496497775441202
+  "version": "2.0.0",
+  "analysis_plan_hash": "1fba2e24",
+  "seed": 42,
+  "regimes": {
+    "AR1_threshold_profile": {
+      "source": "outputs/tables/table1_thresholds.csv"
+    },
+    "AR2_architecture_comparison": {
+      "nc_detection_mean": 0.9987,
+      "nc_throughput_mean": 0.21795,
+      "nc_fn_harm_mean": 1.6901129143644595,
+      "c_detection_mean": 0.7675,
+      "c_throughput_mean": 0.80995,
+      "c_fn_harm_mean": 325.94950800657097,
+      "fn_harm_ratio": 192.85664598873217
+    },
+    "AR3_inference": {
+      "regime": "AR3_inference",
+      "n_replicates_total": 25,
+      "detection_mean": 0.9933877600000001,
+      "detection_ci_lower": 0.9900424999999999,
+      "detection_ci_upper": 0.9963728333333334,
+      "detection_std": 0.008148335890093015,
+      "throughput_mean": 0.2094357642857143,
+      "throughput_ci_lower": 0.20329048809523811,
+      "throughput_ci_upper": 0.2158769761904762,
+      "throughput_std": 0.01732409204344504,
+      "harm_mean": 11.197177015141122,
+      "harm_ci_lower": 5.891337527411446,
+      "harm_ci_upper": 16.846999706466118,
+      "harm_std": 14.68204095590143,
+      "friction_mean": 3.7656978680590574,
+      "friction_ci_lower": 3.763901461693026,
+      "friction_ci_upper": 3.767408880586917,
+      "friction_std": 0.004754551105909829
+    },
+    "AR_lifecycle": {
+      "regime": "AR_lifecycle",
+      "n_periods": 12,
+      "drift_regime": "medium",
+      "mean_final_decay": 0.032538604578577504,
+      "mean_cumulative_drift": 0.20908160295181233,
+      "re_audit_rate": 0.0992
+    },
+    "AR_decoupled_scm": {
+      "regime": "AR_decoupled_scm",
+      "description": "Decoupled SCM: baseline_harm = sigmoid(-3 + 4*(1 - harm_latent)) where harm_latent ~ Beta(2.5, 2.0) drawn independently of intrinsic_safety. Safety-gate observation still derived from original intrinsic_safety with noise.",
+      "n_replicates": 5,
+      "nc_detection_mean": 0.9976,
+      "nc_throughput_mean": 0.21687499999999998,
+      "nc_fn_harm_mean": 1.4771926878963388,
+      "c_detection_mean": 0.7733000000000001,
+      "c_throughput_mean": 0.80815,
+      "c_fn_harm_mean": 118.71738013610772,
+      "fn_harm_ratio_decoupled": 80.366888564262,
+      "fn_harm_ratio_coupled_for_comparison": 192.85664598873217
+    },
+    "AR_sobol_N1024_primary": {
+      "n_grid": [
+        64,
+        128,
+        256,
+        512,
+        1024
+      ],
+      "primary_N": 1024
+    },
+    "AR_nsga2": {
+      "per_seed": [
+        {
+          "seed": 42,
+          "n_pareto": 50,
+          "final_hv": 0.8171583333333333,
+          "hv_trajectory": [
+            0.4589027777777777,
+            0.4623972222222221,
+            0.4626472222222222,
+            0.4738583333333333,
+            0.5093888888888889,
+            0.5260777777777776,
+            0.5405444444444445,
+            0.6217972222222222,
+            0.6228888888888888,
+            0.6259499999999998,
+            0.6262138888888888,
+            0.6386749999999999,
+            0.6589055555555555,
+            0.6866111111111112,
+            0.6996027777777778,
+            0.7075750000000002,
+            0.7442805555555556,
+            0.7533305555555555,
+            0.7637555555555555,
+            0.7642944444444445,
+            0.7717027777777777,
+            0.792797222222222,
+            0.801486111111111,
+            0.8029111111111112,
+            0.8171583333333333
+          ]
         },
-        "reason": "PASS"
-      },
-      "bias_subgroup_harm": {
-        "passed": true,
-        "correlation": 1.0,
-        "reason": "PASS"
-      },
-      "calibration_abstention": {
-        "passed": true,
-        "correlation": -0.9946778047312502,
-        "reason": "PASS"
-      },
-      "drift_behaviour": {
-        "passed": true,
-        "drift_corr": -0.005969770889127159,
-        "reason": "PASS - drift susceptibility structurally linked to decay"
-      },
-      "gaming_behaviour": {
-        "passed": true,
-        "high_gaming_bias": 0.052137553025591345,
-        "low_gaming_bias": 0.01221611822143754,
-        "reason": "PASS"
-      },
-      "observation_noise_reduction": {
-        "passed": true,
-        "reason": "PASS - structurally enforced by artefact_noise_reduction parameter"
-      },
-      "value_bounds": {
-        "passed": true,
-        "violations": [],
-        "reason": "PASS"
-      }
+        {
+          "seed": 123,
+          "n_pareto": 50,
+          "final_hv": 0.8386916666666667,
+          "hv_trajectory": [
+            0.5613416666666666,
+            0.5619361111111111,
+            0.5632333333333333,
+            0.593525,
+            0.6052499999999998,
+            0.6065,
+            0.6112333333333333,
+            0.6196138888888887,
+            0.6662888888888888,
+            0.6717638888888888,
+            0.6727027777777778,
+            0.6901055555555556,
+            0.6904499999999998,
+            0.7100444444444445,
+            0.7552638888888888,
+            0.7649333333333335,
+            0.7660138888888889,
+            0.7774138888888888,
+            0.7975777777777778,
+            0.7979583333333334,
+            0.7981694444444444,
+            0.8285027777777778,
+            0.8294388888888888,
+            0.8285777777777779,
+            0.8386916666666667
+          ]
+        },
+        {
+          "seed": 7777,
+          "n_pareto": 50,
+          "final_hv": 0.8489388888888889,
+          "hv_trajectory": [
+            0.4755722222222222,
+            0.5615222222222223,
+            0.5632111111111111,
+            0.5741944444444443,
+            0.5964722222222221,
+            0.5984499999999999,
+            0.6292055555555555,
+            0.6558416666666665,
+            0.6591499999999999,
+            0.682175,
+            0.7030333333333332,
+            0.7075333333333333,
+            0.7279888888888888,
+            0.7326444444444443,
+            0.7393472222222223,
+            0.763838888888889,
+            0.7971416666666666,
+            0.812075,
+            0.8234666666666666,
+            0.8231166666666665,
+            0.8262805555555552,
+            0.8273972222222222,
+            0.8339444444444444,
+            0.8375055555555555,
+            0.8489388888888889
+          ]
+        }
+      ],
+      "frontier_overlap_with_seed42": [
+        {
+          "seed_pair": [
+            42,
+            123
+          ],
+          "overlap_fraction": 0.7
+        },
+        {
+          "seed_pair": [
+            42,
+            7777
+          ],
+          "overlap_fraction": 0.76
+        }
+      ]
+    },
+    "AR_weighting_scheme_sensitivity": {
+      "schemes": [
+        {
+          "scheme_id": "baseline_30_20_20_15_15",
+          "c_detection_mean": "0.7675",
+          "c_fn_harm_mean": "325.94950800657097",
+          "nc_vs_c_fn_harm_ratio": "192.85664598873217"
+        },
+        {
+          "scheme_id": "safety_heavy_50",
+          "c_detection_mean": "0.8972",
+          "c_fn_harm_mean": "135.05616766953577",
+          "nc_vs_c_fn_harm_ratio": "79.90955309652877"
+        },
+        {
+          "scheme_id": "safety_minimal_10",
+          "c_detection_mean": "0.622",
+          "c_fn_harm_mean": "564.9273188570821",
+          "nc_vs_c_fn_harm_ratio": "334.25418743073396"
+        },
+        {
+          "scheme_id": "uniform_20",
+          "c_detection_mean": "0.7232000000000001",
+          "c_fn_harm_mean": "402.47525737807825",
+          "nc_vs_c_fn_harm_ratio": "238.13512929070941"
+        },
+        {
+          "scheme_id": "evidence_heavy_40",
+          "c_detection_mean": "0.7325999999999999",
+          "c_fn_harm_mean": "405.33933270990826",
+          "nc_vs_c_fn_harm_ratio": "239.82973519986962"
+        }
+      ]
     }
   },
-  "inference_results": {
-    "detection_mean": 0.9957333333333332,
-    "detection_ci_lower": 0.9938365,
-    "detection_ci_upper": 0.9975511666666667,
-    "detection_std": 0.0049984442023938225,
-    "throughput_mean": 0.20991079365079365,
-    "throughput_ci_lower": 0.2026995873015873,
-    "throughput_ci_upper": 0.2173172916666667,
-    "throughput_std": 0.019408039352850504,
-    "harm_mean": 6.722039455580902,
-    "harm_ci_lower": 3.7690779066568694,
-    "harm_ci_upper": 9.985454472493226,
-    "harm_std": 8.27797893937418,
-    "friction_mean": 3.7652220342537412,
-    "friction_ci_lower": 3.763282983992336,
-    "friction_ci_upper": 3.767333602591728,
-    "friction_std": 0.005134089549378998,
-    "detection_bayesian": {
-      "posterior_mean": 0.9956803455723542,
-      "ci_lower": 0.9948305730415901,
-      "ci_upper": 0.9964550558461084,
-      "alpha_posterior": 24894.0,
-      "beta_posterior": 108.0
-    },
-    "throughput_bayesian": {
-      "posterior_mean": 0.20990320774338053,
-      "ci_lower": 0.20487747051873498,
-      "ci_upper": 0.21497290386261078,
-      "alpha_posterior": 5248.0,
-      "beta_posterior": 19754.0
-    }
-  },
-  "replication_report": {
-    "timestamp": "2026-04-19T12:06:23.802104Z",
-    "config_hash": "fc17a8cac3e882b9deb14a2f4b368866859e89a533f16de21ff95349274d4ae5",
-    "seed_a": 42,
-    "seed_b": 42,
-    "tolerance": 0.01,
-    "metric_comparisons": {
-      "unsafe_detection_rate": {
-        "build_a": 0.9995,
-        "build_b": 0.9995,
-        "absolute_difference": 0.0,
-        "tolerance": 0.01,
-        "passed": true
-      },
-      "safe_throughput": {
-        "build_a": 0.216875,
-        "build_b": 0.216875,
-        "absolute_difference": 0.0,
-        "tolerance": 0.01,
-        "passed": true
-      },
-      "false_negative_harm": {
-        "build_a": 0.8473340969146678,
-        "build_b": 0.8473340969146678,
-        "absolute_difference": 0.0,
-        "tolerance": 0.01,
-        "passed": true
-      },
-      "mean_total_friction": {
-        "build_a": 3.7661584862690907,
-        "build_b": 3.7661584862690907,
-        "absolute_difference": 0.0,
-        "tolerance": 0.01,
-        "passed": true
-      }
-    },
-    "frontier_overlap": 1.0,
-    "all_passed": true,
-    "summary": "PASS - All metrics within tolerance"
-  },
-  "compensatory_comparison": {
-    "nc_detection_mean": 0.9983000000000001,
-    "nc_throughput_mean": 0.214275,
-    "nc_fn_harm_mean": 2.1220461587922816,
-    "c_detection_mean": 0.7718999999999999,
-    "c_throughput_mean": 0.8115,
-    "c_fn_harm_mean": 323.124432547548
-  },
-  "table1_data": [
-    {
-      "profile": "permissive",
-      "detection_rate": "0.844",
-      "throughput": "0.520",
-      "fn_harm": "231.6",
-      "friction": "3.61"
-    },
-    {
-      "profile": "moderate",
-      "detection_rate": "0.999",
-      "throughput": "0.213",
-      "fn_harm": "1.8",
-      "friction": "3.76"
-    },
-    {
-      "profile": "strict",
-      "detection_rate": "1.000",
-      "throughput": "0.023",
-      "fn_harm": "0.0",
-      "friction": "3.95"
-    },
-    {
-      "profile": "very_strict",
-      "detection_rate": "1.000",
-      "throughput": "0.004",
-      "fn_harm": "0.0",
-      "friction": "4.03"
-    }
-  ],
-  "lifecycle_summary": {
-    "mean_final_decay": 0.0326238199944176,
-    "mean_total_harm": 5.048468923211961,
-    "re_audit_rate": 0.1009
-  }
+  "replication_passed": true,
+  "validation_tests_passed": 7,
+  "validation_tests_total": 7
 }

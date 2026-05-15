@@ -1,0 +1,25 @@
+{
+  "coupled_scm": {
+    "regime": "AR2_architecture_comparison",
+    "nc_detection_mean": 0.9987,
+    "nc_throughput_mean": 0.21795,
+    "nc_fn_harm_mean": 1.6901129143644595,
+    "c_detection_mean": 0.7675,
+    "c_throughput_mean": 0.80995,
+    "c_fn_harm_mean": 325.94950800657097,
+    "fn_harm_ratio": 192.85664598873217
+  },
+  "decoupled_scm": {
+    "regime": "AR_decoupled_scm",
+    "description": "Decoupled SCM: baseline_harm = sigmoid(-3 + 4*(1 - harm_latent)) where harm_latent ~ Beta(2.5, 2.0) drawn independently of intrinsic_safety. Safety-gate observation still derived from original intrinsic_safety with noise.",
+    "n_replicates": 5,
+    "nc_detection_mean": 0.9976,
+    "nc_throughput_mean": 0.21687499999999998,
+    "nc_fn_harm_mean": 1.4771926878963388,
+    "c_detection_mean": 0.7733000000000001,
+    "c_throughput_mean": 0.80815,
+    "c_fn_harm_mean": 118.71738013610772,
+    "fn_harm_ratio_decoupled": 80.366888564262,
+    "fn_harm_ratio_coupled_for_comparison": 192.85664598873217
+  }
+}
